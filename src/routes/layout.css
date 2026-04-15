@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+:root {
+	/* Constant Brand Colors */
+	--brand-orange: #ff8906;
+	--brand-coral: #f25f4c;
+	--brand-pink: #e53170;
+	--brand-white: #fffffe;
+	--brand-dark: #0f0e17;
+	--brand-muted: #a7a9be;
+	--brand-gray: #2e2f3e;
+
+	/* LIGHT MODE (Default) */
+	--background: var(--brand-white);
+	--headline: var(--brand-dark);
+	--paragraph: var(--brand-gray);
+	--button: var(--brand-orange);
+	--button-text: var(--brand-white);
+
+	/* Light Mode Specific Elements */
+	--card-bg: var(--brand-dark);
+	--card-headline: var(--brand-white);
+	--card-paragraph: var(--brand-muted);
+	--illustration-stroke: #000000;
+	--highlight: var(--brand-pink);
+}
+
+/* DARK MODE */
+/* Applied via system preference or a .dark class on the body */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: var(--brand-dark);
+		--headline: var(--brand-white);
+		--paragraph: var(--brand-muted);
+		--button: var(--brand-orange);
+		--button-text: var(--brand-white);
+
+		/* Dark Mode Specific Elements */
+		--card-bg: var(--brand-white);
+		--card-headline: var(--brand-dark);
+		--card-paragraph: var(--brand-muted);
+		--illustration-stroke: #000000;
+		--highlight: var(--brand-orange);
+	}
+}
