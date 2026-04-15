@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+	let activeVerse: number | null = $state(null);
+
 	const verses = [
 		['Jai Hanuman gyan gun sagar,', 'Jai Kapis tihun lok ujagar |'],
 		['Ram doot atulit bal dhama,', 'Anjani-putra Pavan sut nama |'],
@@ -41,6 +43,10 @@
 		['Jo yah padhe Hanuman Chalisa,', 'Hoye siddhi sakhi Gaureesa |'],
 		['Tulsidas sada hari chera,', 'Keejai Das Hrdaye mein dera |']
 	];
+
+	function toggleVerse(index: number | null) {
+		activeVerse = activeVerse === index ? null : index;
+	}
 </script>
 
 <main class="min-h-screen bg-base-100 font-sans text-base-content antialiased">
@@ -76,17 +82,28 @@
 
 		<div class="flex flex-col gap-y-16 lg:gap-y-24">
 			{#each verses as line, i}
-				<div class="group flex flex-col items-center text-center">
+				<button
+					onclick={() => toggleVerse(i)}
+					class="group flex flex-col items-center text-center focus:outline-none"
+					aria-pressed={activeVerse === i}
+				>
 					<span
-						class="mb-4 badge badge-outline font-mono badge-sm opacity-30 transition-opacity group-hover:opacity-100"
+						class="mb-4 badge badge-outline font-mono badge-sm transition-all duration-100
+                        {activeVerse === i
+							? 'scale-110 opacity-100 badge-secondary'
+							: 'opacity-30 group-hover:opacity-100'}"
 					>
 						{(i + 1).toString().padStart(2, '0')}
 					</span>
-					<div class="max-w-md space-y-1 text-lg leading-relaxed font-medium md:text-xl">
+
+					<div
+						class="max-w-md space-y-1 text-lg leading-relaxed transition-all duration-100 md:text-xl
+                        {activeVerse === i ? 'scale-105 font-bold text-secondary' : 'font-medium'}"
+					>
 						<p>{line[0]}</p>
 						<p>{line[1]}</p>
 					</div>
-				</div>
+				</button>
 			{/each}
 		</div>
 
