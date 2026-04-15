@@ -8,6 +8,27 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/noto-sans':
+        specifier: ^5.2.10
+        version: 5.2.10
+      '@fontsource/noto-sans-bengali':
+        specifier: ^5.2.11
+        version: 5.2.11
+      '@fontsource/noto-sans-devanagari':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/noto-sans-gujarati':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/noto-sans-kannada':
+        specifier: ^5.2.9
+        version: 5.2.9
+      '@fontsource/noto-sans-tamil':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/noto-sans-telugu':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@phosphor-icons/web':
         specifier: ^2.1.2
         version: 2.1.2
@@ -137,6 +158,27 @@ packages:
   '@eslint/plugin-kit@0.7.1':
     resolution: {integrity: sha512-rZAP3aVgB9ds9KOeUSL+zZ21hPmo8dh6fnIFwRQj5EAZl9gzR7wxYbYXYysAM8CTqGmUGyp2S4kUdV17MnGuWQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
+
+  '@fontsource/noto-sans-bengali@5.2.11':
+    resolution: {integrity: sha512-sDCKgC1u83/7JwulfgyvCDab97OkN375RDeGcXtvmI2Vx9ZY5mAcjb4qBtZbv53sL8i+jLawsWvZQVs4zCNkug==}
+
+  '@fontsource/noto-sans-devanagari@5.2.8':
+    resolution: {integrity: sha512-UyCfyCEX2+QVUDQWb9y2MRTg1O3bTcXixzD2xQfapFOtw4hpH1rfDIbTXulZ4SUEsbB/wWeyyEL9b93Nmwd6Gg==}
+
+  '@fontsource/noto-sans-gujarati@5.2.7':
+    resolution: {integrity: sha512-hqRY1+SqEMV0syW+SadpNiJRFpa2QooEFJ6gx9hSsh+h34tInqhr6+bVvYCTyOpfuWj6AOnECW67b0YIA2eVRg==}
+
+  '@fontsource/noto-sans-kannada@5.2.9':
+    resolution: {integrity: sha512-4NxL8MxwKLOWaFUi1o5PjLJUp769jtfuczjZrcVDy/2fGLMJRpGLOg7FlGuHY4Ys2Oh904ARYBZY96BIXdjrhA==}
+
+  '@fontsource/noto-sans-tamil@5.2.7':
+    resolution: {integrity: sha512-9ORanbdYAADV8ZC4g1l1GeVllDQBZ04GGqkki7H0LlO3JIOVA4acFQYKJE4PB0y/qGa6fmnwk8mXy+OwJm9iGA==}
+
+  '@fontsource/noto-sans-telugu@5.2.8':
+    resolution: {integrity: sha512-CGC8+bjR326wuIMBJZzVDrPISTw10EX0g5N3ngnEV3MX+sN5H/jkfBkVscRyhfUqGXlv8esaNultOakiO6GRpg==}
+
+  '@fontsource/noto-sans@5.2.10':
+    resolution: {integrity: sha512-J58RVfS/C0Z2VBF+PoU260Tx8cdRGYuS+e3yQe4hYaIYDl0sEVn5CzlLo5zVRvQD0HaIUTV8AZMfqR7rtdEpqQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1338,6 +1380,20 @@ snapshots:
     dependencies:
       '@eslint/core': 1.2.1
       levn: 0.4.1
+
+  '@fontsource/noto-sans-bengali@5.2.11': {}
+
+  '@fontsource/noto-sans-devanagari@5.2.8': {}
+
+  '@fontsource/noto-sans-gujarati@5.2.7': {}
+
+  '@fontsource/noto-sans-kannada@5.2.9': {}
+
+  '@fontsource/noto-sans-tamil@5.2.7': {}
+
+  '@fontsource/noto-sans-telugu@5.2.8': {}
+
+  '@fontsource/noto-sans@5.2.10': {}
 
   '@humanfs/core@0.19.1': {}
 

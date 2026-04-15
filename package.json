@@ -37,6 +37,13 @@
 		"vite": "^8.0.7"
 	},
 	"dependencies": {
+		"@fontsource/noto-sans": "^5.2.10",
+		"@fontsource/noto-sans-bengali": "^5.2.11",
+		"@fontsource/noto-sans-devanagari": "^5.2.8",
+		"@fontsource/noto-sans-gujarati": "^5.2.7",
+		"@fontsource/noto-sans-kannada": "^5.2.9",
+		"@fontsource/noto-sans-tamil": "^5.2.7",
+		"@fontsource/noto-sans-telugu": "^5.2.8",
 		"@phosphor-icons/web": "^2.1.2",
 		"daisyui": "^5.5.19"
 	}

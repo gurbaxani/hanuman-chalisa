@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state'; // In Svelte 5, this is a reactive object
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
+
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import '@phosphor-icons/web/duotone';
@@ -27,17 +28,17 @@
 </div>
 
 <div class="dock dock-xl">
-	<button onclick={() => goto('/read')} class={isActive('/read') ? 'dock-active' : ''}>
+	<button onclick={() => goto(resolve('/read'))} class={isActive('/read') ? 'dock-active' : ''}>
 		<i class="ph-duotone ph-book-open-text text-xl"></i>
 		<span class="dock-label">Read</span>
 	</button>
 
-	<button onclick={() => goto('/learn')} class={isActive('/learn') ? 'dock-active' : ''}>
+	<button onclick={() => goto(resolve('/learn'))} class={isActive('/learn') ? 'dock-active' : ''}>
 		<i class="ph-duotone ph-hands-praying text-xl"></i>
 		<span class="dock-label">Learn</span>
 	</button>
 
-	<button onclick={() => goto('/settings')} class={isActive('/settings') ? 'dock-active' : ''}>
+	<button onclick={() => goto(resolve('/settings'))} class={isActive('/settings') ? 'dock-active' : ''}>
 		<i class="ph-duotone ph-gear-six text-xl"></i>
 		<span class="dock-label">Settings</span>
 	</button>
