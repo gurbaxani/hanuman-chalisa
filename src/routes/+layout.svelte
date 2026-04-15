@@ -6,7 +6,7 @@
 
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
-	// @ts-ignore - Phosphor icons side-effect import
+	// @ts-expect-error - Phosphor icons side-effect import
 	import '@phosphor-icons/web/duotone';
 	import { goto } from '$app/navigation';
 	import * as m from '$lib/paraglide/messages.js';
