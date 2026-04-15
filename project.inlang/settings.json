@@ -9,8 +9,8 @@
 	},
 	"baseLocale": "en",
 	"locales": ["en", "hi", "mr", "gu", "ta", "te", "kn", "bn", "bho"],
-	"library.inlang.paraglideJs": {
+	"project.inlang.paraglideJs": {
 		"outdir": "./src/lib/paraglide",
-		"languageTagStrategy": ["url", "cookie", "globalVariable"]
+		"strategy": ["url", "cookie", "globalVariable"]
 	}
 }

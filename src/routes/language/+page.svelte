@@ -46,6 +46,9 @@
 				<a
 					href={resolve(localizeHref('/', { locale }) as Pathname)}
 					data-sveltekit-reload
+					onclick={() => {
+						document.cookie = `PARAGLIDE_LOCALE=${locale}; path=/; max-age=31536000; SameSite=Lax`;
+					}}
 
 					class="group flex items-center justify-between p-5 rounded-3xl transition-all duration-300 border-2 {isCurrent
 						? 'bg-primary/10 border-primary shadow-lg shadow-primary/10'
