@@ -8,5 +8,9 @@
 		"pathPattern": "./messages/{locale}.json"
 	},
 	"baseLocale": "en",
-	"locales": ["en", "hi", "mr", "gu", "ta", "te", "kn", "bn", "bho"]
+	"locales": ["en", "hi", "mr", "gu", "ta", "te", "kn", "bn", "bho"],
+	"library.inlang.paraglideJs": {
+		"outdir": "./src/lib/paraglide",
+		"languageTagStrategy": ["url"]
+	}
 }

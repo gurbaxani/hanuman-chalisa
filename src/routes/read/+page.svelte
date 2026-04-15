@@ -3,7 +3,7 @@
 
 	let activeVerse: number | null = $state(null);
 
-	const verses = [
+	const verses = $derived([
 		[m.verse_1_1(), m.verse_1_2()],
 		[m.verse_2_1(), m.verse_2_2()],
 		[m.verse_3_1(), m.verse_3_2()],
@@ -44,7 +44,7 @@
 		[m.verse_38_1(), m.verse_38_2()],
 		[m.verse_39_1(), m.verse_39_2()],
 		[m.verse_40_1(), m.verse_40_2()]
-	];
+	]);
 
 	function toggleVerse(index: number) {
 		activeVerse = activeVerse === index ? null : index;
