@@ -29,19 +29,30 @@
 	{/each}
 </div>
 
-<div class="dock dock-xl">
-	<button onclick={() => goto(resolve(localizeHref('/read') as Pathname))} class={isActive(resolve(localizeHref('/read') as Pathname)) ? 'dock-active' : ''}>
-		<i class="ph-duotone ph-book-open-text text-xl"></i>
-		<span class="dock-label">{m.read()}</span>
-	</button>
+{#if page.url.pathname !== '/'}
+	<div class="dock dock-xl">
+		<button
+			onclick={() => goto(resolve(localizeHref('/read') as Pathname))}
+			class={isActive(resolve(localizeHref('/read') as Pathname)) ? 'dock-active' : ''}
+		>
+			<i class="ph-duotone ph-book-open-text text-xl"></i>
+			<span class="dock-label">{m.read()}</span>
+		</button>
 
-	<button onclick={() => goto(resolve(localizeHref('/learn') as Pathname))} class={isActive(resolve(localizeHref('/learn') as Pathname)) ? 'dock-active' : ''}>
-		<i class="ph-duotone ph-hands-praying text-xl"></i>
-		<span class="dock-label">{m.learn()}</span>
-	</button>
+		<button
+			onclick={() => goto(resolve(localizeHref('/learn') as Pathname))}
+			class={isActive(resolve(localizeHref('/learn') as Pathname)) ? 'dock-active' : ''}
+		>
+			<i class="ph-duotone ph-hands-praying text-xl"></i>
+			<span class="dock-label">{m.learn()}</span>
+		</button>
 
-	<button onclick={() => goto(resolve(localizeHref('/settings') as Pathname))} class={isActive(resolve(localizeHref('/settings') as Pathname)) ? 'dock-active' : ''}>
-		<i class="ph-duotone ph-gear-six text-xl"></i>
-		<span class="dock-label">{m.settings()}</span>
-	</button>
-</div>
+		<button
+			onclick={() => goto(resolve(localizeHref('/settings') as Pathname))}
+			class={isActive(resolve(localizeHref('/settings') as Pathname)) ? 'dock-active' : ''}
+		>
+			<i class="ph-duotone ph-gear-six text-xl"></i>
+			<span class="dock-label">{m.settings()}</span>
+		</button>
+	</div>
+{/if}
