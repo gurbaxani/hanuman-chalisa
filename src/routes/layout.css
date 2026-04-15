@@ -1,44 +1,99 @@
 @import 'tailwindcss';
-:root {
-	/* Constant Brand Colors */
-	--brand-orange: #ff8906;
-	--brand-coral: #f25f4c;
-	--brand-pink: #e53170;
-	--brand-white: #fffffe;
-	--brand-dark: #0f0e17;
-	--brand-muted: #a7a9be;
-	--brand-gray: #2e2f3e;
 
-	/* LIGHT MODE (Default) */
-	--background: var(--brand-white);
-	--headline: var(--brand-dark);
-	--paragraph: var(--brand-gray);
-	--button: var(--brand-orange);
-	--button-text: var(--brand-white);
+/* 1. Plugin & Theme Definitions (daisyUI v5 Style) */
+@plugin 'daisyui';
 
-	/* Light Mode Specific Elements */
-	--card-bg: var(--brand-dark);
-	--card-headline: var(--brand-white);
-	--card-paragraph: var(--brand-muted);
-	--illustration-stroke: #000000;
-	--highlight: var(--brand-pink);
+@plugin 'daisyui/theme' {
+	name: 'cupcake';
+	default: true;
+	prefersdark: false;
+	color-scheme: 'light';
+	--color-base-100: oklch(97.788% 0.004 56.375);
+	--color-base-200: oklch(93.982% 0.007 61.449);
+	--color-base-300: oklch(91.586% 0.006 53.44);
+	--color-base-content: oklch(23.574% 0.066 313.189);
+	--color-primary: oklch(85% 0.138 181.071);
+	--color-primary-content: oklch(43% 0.078 188.216);
+	--color-secondary: oklch(89% 0.061 343.231);
+	--color-secondary-content: oklch(45% 0.187 3.815);
+	--color-accent: oklch(90% 0.076 70.697);
+	--color-accent-content: oklch(47% 0.157 37.304);
+	--color-neutral: oklch(27% 0.006 286.033);
+	--color-neutral-content: oklch(92% 0.004 286.32);
+	--color-info: oklch(68% 0.169 237.323);
+	--color-info-content: oklch(29% 0.066 243.157);
+	--color-success: oklch(69% 0.17 162.48);
+	--color-success-content: oklch(26% 0.051 172.552);
+	--color-warning: oklch(79% 0.184 86.047);
+	--color-warning-content: oklch(28% 0.066 53.813);
+	--color-error: oklch(64% 0.246 16.439);
+	--color-error-content: oklch(27% 0.105 12.094);
+	--radius-selector: 0.5rem;
+	--radius-field: 0.5rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 2px;
+	--depth: 1;
 }
 
-/* DARK MODE */
-/* Applied via system preference or a .dark class on the body */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: var(--brand-dark);
-		--headline: var(--brand-white);
-		--paragraph: var(--brand-muted);
-		--button: var(--brand-orange);
-		--button-text: var(--brand-white);
+@plugin 'daisyui/theme' {
+	name: 'dim';
+	prefersdark: true;
+	color-scheme: 'dark';
+	--color-base-100: oklch(30.857% 0.023 264.149);
+	--color-base-200: oklch(28.036% 0.019 264.182);
+	--color-base-300: oklch(26.346% 0.018 262.177);
+	--color-base-content: oklch(82.901% 0.031 222.959);
+	--color-primary: oklch(86.133% 0.141 139.549);
+	--color-primary-content: oklch(17.226% 0.028 139.549);
+	--color-secondary: oklch(73.375% 0.165 35.353);
+	--color-secondary-content: oklch(14.675% 0.033 35.353);
+	--color-accent: oklch(74.229% 0.133 311.379);
+	--color-accent-content: oklch(14.845% 0.026 311.379);
+	--color-neutral: oklch(24.731% 0.02 264.094);
+	--color-neutral-content: oklch(82.901% 0.031 222.959);
+	--color-info: oklch(86.078% 0.142 206.182);
+	--color-info-content: oklch(17.215% 0.028 206.182);
+	--color-success: oklch(86.171% 0.142 166.534);
+	--color-success-content: oklch(17.234% 0.028 166.534);
+	--color-warning: oklch(86.163% 0.142 94.818);
+	--color-warning-content: oklch(17.232% 0.028 94.818);
+	--color-error: oklch(82.418% 0.099 33.756);
+	--color-error-content: oklch(16.483% 0.019 33.756);
+	--radius-selector: 0.5rem;
+	--radius-field: 0.5rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+}
 
-		/* Dark Mode Specific Elements */
-		--card-bg: var(--brand-white);
-		--card-headline: var(--brand-dark);
-		--card-paragraph: var(--brand-muted);
-		--illustration-stroke: #000000;
-		--highlight: var(--brand-orange);
+/* 2. Base Styles */
+@layer base {
+	/* Use system font-smoothing for cleaner text */
+	html {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	input,
+	select,
+	textarea {
+		font-size: 16px; /* iOS zoom fix */
+	}
+
+	body {
+		-webkit-tap-highlight-color: transparent;
+		line-height: 1.6;
+	}
+
+	/* Specific link styling */
+	main a:not(.btn) {
+		padding-top: 4px;
+		padding-bottom: 4px;
+		display: inline-block;
+		text-decoration: underline;
+		text-underline-offset: 2px;
 	}
 }
