@@ -6,6 +6,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import '@phosphor-icons/web/duotone';
+	import { goto } from '$app/navigation';
 
 	let { children } = $props();
 </script>
@@ -23,17 +24,17 @@
 </div>
 
 <div class="dock dock-xl">
-	<button>
+	<button onclick={() => goto('/read')}>
 		<i class="ph-duotone ph-book-open-text text-xl"></i>
 		<span class="dock-label">Read</span>
 	</button>
 
-	<button class="dock-active">
-		<i class="ph-duotone ph-translate text-xl"></i>
-		<span class="dock-label">Translate</span>
+	<button class="dock-active" onclick={() => goto('/learn')}>
+		<i class="ph-duotone ph-hands-praying text-xl"></i>
+		<span class="dock-label">Learn</span>
 	</button>
 
-	<button>
+	<button onclick={() => goto('/settings')}>
 		<i class="ph-duotone ph-gear-six text-xl"></i>
 		<span class="dock-label">Settings</span>
 	</button>
