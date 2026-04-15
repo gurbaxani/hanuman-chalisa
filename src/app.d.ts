@@ -10,4 +10,6 @@ declare global {
 	}
 }
 
+declare module '@phosphor-icons/web/duotone';
+
 export {};
