@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { locales, localizeHref, getLocale } from '$lib/paraglide/runtime';
+	import { locales, localizeHref, getLocale } from '../../lib/paraglide/runtime.js';
 	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
-	import * as m from '$lib/paraglide/messages.js';
+	import * as m from '../../lib/paraglide/messages.js';
 
 	const languageNames: Record<string, { native: string; english: string }> = {
 		en: { native: 'English', english: 'English' },
@@ -45,6 +45,8 @@
 				{@const isCurrent = currentLocale === locale}
 				<a
 					href={resolve(localizeHref('/', { locale }) as Pathname)}
+					data-sveltekit-reload
+
 					class="group flex items-center justify-between p-5 rounded-3xl transition-all duration-300 border-2 {isCurrent
 						? 'bg-primary/10 border-primary shadow-lg shadow-primary/10'
 						: 'bg-base-200/50 border-transparent hover:bg-base-200 hover:scale-[1.02]'}"

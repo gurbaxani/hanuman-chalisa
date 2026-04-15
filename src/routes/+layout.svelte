@@ -2,10 +2,11 @@
 	import type { Pathname } from '$app/types';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state'; // In Svelte 5, this is a reactive object
-	import { locales, localizeHref } from '$lib/paraglide/runtime';
+	import { locales, localizeHref } from '$lib/paraglide/runtime.js';
 
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
+	// @ts-ignore - Phosphor icons side-effect import
 	import '@phosphor-icons/web/duotone';
 	import { goto } from '$app/navigation';
 	import * as m from '$lib/paraglide/messages.js';

@@ -11,6 +11,6 @@
 	"locales": ["en", "hi", "mr", "gu", "ta", "te", "kn", "bn", "bho"],
 	"library.inlang.paraglideJs": {
 		"outdir": "./src/lib/paraglide",
-		"languageTagStrategy": ["url"]
+		"languageTagStrategy": ["url", "cookie", "globalVariable"]
 	}
 }
