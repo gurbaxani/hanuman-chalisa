@@ -97,5 +97,8 @@
 	"verse_39_2": "ಹೋಯ ಸಿದ್ಧಿ ಸಾಖೀ ಗೌರೀಶಾ ||",
 	"verse_40_1": "ತುಲಸೀದಾಸ ಸದಾ ಹರಿ ಚೇರಾ |",
 	"verse_40_2": "ಕೀಜೈ ನಾಥ ಹೃದಯ ಮಹ ಡೇರಾ ||",
-	"hello_world": "Hello, {name} from kn!"
+	"hello_world": "Hello, {name} from kn!",
+	"read": "ಓದಿ",
+	"learn": "ಕಲಿಯಿರಿ",
+	"settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
 }

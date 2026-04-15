@@ -8,6 +8,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import '@phosphor-icons/web/duotone';
 	import { goto } from '$app/navigation';
+	import * as m from '$lib/paraglide/messages.js';
 
 	let { children } = $props();
 
@@ -16,7 +17,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Jai Shree Ram</title>
+	<title>{m.jai_shri_ram()}</title>
 </svelte:head>
 
 {@render children()}
@@ -28,18 +29,18 @@
 </div>
 
 <div class="dock dock-xl">
-	<button onclick={() => goto(resolve('/read'))} class={isActive('/read') ? 'dock-active' : ''}>
+	<button onclick={() => goto(resolve(localizeHref('/read') as Pathname))} class={isActive(resolve(localizeHref('/read') as Pathname)) ? 'dock-active' : ''}>
 		<i class="ph-duotone ph-book-open-text text-xl"></i>
-		<span class="dock-label">Read</span>
+		<span class="dock-label">{m.read()}</span>
 	</button>
 
-	<button onclick={() => goto(resolve('/learn'))} class={isActive('/learn') ? 'dock-active' : ''}>
+	<button onclick={() => goto(resolve(localizeHref('/learn') as Pathname))} class={isActive(resolve(localizeHref('/learn') as Pathname)) ? 'dock-active' : ''}>
 		<i class="ph-duotone ph-hands-praying text-xl"></i>
-		<span class="dock-label">Learn</span>
+		<span class="dock-label">{m.learn()}</span>
 	</button>
 
-	<button onclick={() => goto(resolve('/settings'))} class={isActive('/settings') ? 'dock-active' : ''}>
+	<button onclick={() => goto(resolve(localizeHref('/settings') as Pathname))} class={isActive(resolve(localizeHref('/settings') as Pathname)) ? 'dock-active' : ''}>
 		<i class="ph-duotone ph-gear-six text-xl"></i>
-		<span class="dock-label">Settings</span>
+		<span class="dock-label">{m.settings()}</span>
 	</button>
 </div>
