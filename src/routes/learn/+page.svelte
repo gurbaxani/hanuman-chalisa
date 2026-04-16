@@ -5,626 +5,616 @@
 	let activeTab: 'meaning' | 'words' | 'context' = $state('meaning');
 
 	const content = $derived([
-		// --- Opening Dohas ---
 		{
-			type: 'Doha',
-			label: 'Opening',
+			type: m.learn_type_doha(),
+			label: m.learn_label_opening(),
 			lines: [m.opening_doha_1(), m.opening_doha_2(), m.opening_doha_3(), m.opening_doha_4()],
-			meaning: 'Cleansing the mirror of my mind with the dust from Guru\'s lotus feet, I describe the pure glory of Lord Rama, which bestows the four fruits of life.',
+			meaning: m.learn_o1_m(),
+			context: m.learn_o1_c(),
+			theme: m.learn_o1_t(),
 			words: [
-				{ word: 'Shri Guru', meaning: 'The respected Guru' },
-				{ word: 'Charan', meaning: 'Feet' },
-				{ word: 'Saroj', meaning: 'Lotus' },
-				{ word: 'Raj', meaning: 'Dust' },
-				{ word: 'Sudhar', meaning: 'Purify / Cleanse' }
-			],
-			context: 'The Chalisa begins with a traditional invocation. Tulsidas speaks of cleaning the mind\'s mirror using the dust from his Guru\'s feet, emphasizing that spiritual insight requires a clear, humble heart.',
-			theme: 'Spiritual preparation'
+				{ word: m.learn_o1_w0_w(), meaning: m.learn_o1_w0_m() },
+				{ word: m.learn_o1_w1_w(), meaning: m.learn_o1_w1_m() },
+				{ word: m.learn_o1_w2_w(), meaning: m.learn_o1_w2_m() },
+				{ word: m.learn_o1_w3_w(), meaning: m.learn_o1_w3_m() },
+				{ word: m.learn_o1_w4_w(), meaning: m.learn_o1_w4_m() },
+			]
 		},
 		{
-			type: 'Doha',
-			label: 'Opening',
+			type: m.learn_type_doha(),
+			label: m.learn_label_opening(),
 			lines: [m.opening_doha_5(), m.opening_doha_6(), m.opening_doha_7(), m.opening_doha_8()],
-			meaning: 'Knowing myself to be devoid of intelligence, I remember the Son of the Wind, Hanuman. Grant me strength, wisdom, and knowledge, and remove my miseries.',
+			meaning: m.learn_o2_m(),
+			context: m.learn_o2_c(),
+			theme: m.learn_o2_t(),
 			words: [
-				{ word: 'Budhi Hin', meaning: 'Lacking intelligence' },
-				{ word: 'Tanu', meaning: 'Body / Self' },
-				{ word: 'Sumirau', meaning: 'Remember / Meditate' },
-				{ word: 'Bal budhi', meaning: 'Strength & wisdom' },
-				{ word: 'Kalesa', meaning: 'Miseries / Sufferings' }
-			],
-			context: 'This doha is a plea for empowerment. By acknowledging human limitations, the devotee creates space for divine grace through Hanuman, the life force (Prana).',
-			theme: 'Plea for grace'
+				{ word: m.learn_o2_w0_w(), meaning: m.learn_o2_w0_m() },
+				{ word: m.learn_o2_w1_w(), meaning: m.learn_o2_w1_m() },
+				{ word: m.learn_o2_w2_w(), meaning: m.learn_o2_w2_m() },
+				{ word: m.learn_o2_w3_w(), meaning: m.learn_o2_w3_m() },
+				{ word: m.learn_o2_w4_w(), meaning: m.learn_o2_w4_m() },
+			]
 		},
-
-		// --- Chaupais (1 to 20 Detailed) ---
 		{
-			type: 'Chaupai',
-			label: 'Verse 01',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 01",
 			lines: [m.verse_1_1(), m.verse_1_2()],
-			meaning: 'Victory to Hanuman, the ocean of wisdom and virtue. Victory to the Lord of monkeys who illuminates all three worlds with his glory.',
+			meaning: m.learn_v1_m(),
+			context: m.learn_v1_c(),
+			theme: m.learn_v1_t(),
 			words: [
-				{ word: 'Jai', meaning: 'Victory / Hail' },
-				{ word: 'Gyan', meaning: 'Wisdom, knowledge' },
-				{ word: 'Gun sagar', meaning: 'Ocean of virtues' },
-				{ word: 'Kapis', meaning: 'Lord of monkeys' },
-				{ word: 'Tihun lok', meaning: 'Three realms' },
-				{ word: 'Ujagar', meaning: 'Illuminator' }
-			],
-			context: 'Establishes Hanuman as an ocean of wisdom. Tulsidas begins with "Jai" — an invocation of victory and blessings.',
-			theme: 'Cosmic glory & invocation'
+				{ word: m.learn_v1_w0_w(), meaning: m.learn_v1_w0_m() },
+				{ word: m.learn_v1_w1_w(), meaning: m.learn_v1_w1_m() },
+				{ word: m.learn_v1_w2_w(), meaning: m.learn_v1_w2_m() },
+				{ word: m.learn_v1_w3_w(), meaning: m.learn_v1_w3_m() },
+				{ word: m.learn_v1_w4_w(), meaning: m.learn_v1_w4_m() },
+				{ word: m.learn_v1_w5_w(), meaning: m.learn_v1_w5_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 02',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 02",
 			lines: [m.verse_2_1(), m.verse_2_2()],
-			meaning: 'You are the messenger of Ram, the abode of incomparable strength. Son of Anjani and child of the Wind God — these are your sacred names.',
+			meaning: m.learn_v2_m(),
+			context: m.learn_v2_c(),
+			theme: m.learn_v2_t(),
 			words: [
-				{ word: 'Ram doot', meaning: 'Messenger of Rama' },
-				{ word: 'Atulit', meaning: 'Incomparable, matchless' },
-				{ word: 'Bal dhama', meaning: 'Abode of strength' },
-				{ word: 'Anjani-putra', meaning: 'Son of mother Anjana' },
-				{ word: 'Pavan-sut', meaning: 'Child of the Wind God' }
-			],
-			context: '"Pavan-sut" connects Hanuman to prana — the breath of life. He is a bridge between the human and the cosmic.',
-			theme: 'Divine lineage'
+				{ word: m.learn_v2_w0_w(), meaning: m.learn_v2_w0_m() },
+				{ word: m.learn_v2_w1_w(), meaning: m.learn_v2_w1_m() },
+				{ word: m.learn_v2_w2_w(), meaning: m.learn_v2_w2_m() },
+				{ word: m.learn_v2_w3_w(), meaning: m.learn_v2_w3_m() },
+				{ word: m.learn_v2_w4_w(), meaning: m.learn_v2_w4_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 03',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 03",
 			lines: [m.verse_3_1(), m.verse_3_2()],
-			meaning: 'Great hero of immense valour, with a body hard as a thunderbolt — you dispel ignorance and dwell always with the wise and the pure of heart.',
+			meaning: m.learn_v3_m(),
+			context: m.learn_v3_c(),
+			theme: m.learn_v3_t(),
 			words: [
-				{ word: 'Mahavir', meaning: 'Great warrior' },
-				{ word: 'Vikram', meaning: 'Courage, valour' },
-				{ word: 'Bajrangi', meaning: 'Body like thunderbolt' },
-				{ word: 'Kumati', meaning: 'Evil intellect' },
-				{ word: 'Sumati ke sangi', meaning: 'Companion of the wise' }
-			],
-			context: 'Focuses on Hanuman\'s role as a guardian of the mind. Devotion leads to clarity of thought.',
-			theme: 'Intellect & inner protection'
+				{ word: m.learn_v3_w0_w(), meaning: m.learn_v3_w0_m() },
+				{ word: m.learn_v3_w1_w(), meaning: m.learn_v3_w1_m() },
+				{ word: m.learn_v3_w2_w(), meaning: m.learn_v3_w2_m() },
+				{ word: m.learn_v3_w3_w(), meaning: m.learn_v3_w3_m() },
+				{ word: m.learn_v3_w4_w(), meaning: m.learn_v3_w4_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 04',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 04",
 			lines: [m.verse_4_1(), m.verse_4_2()],
-			meaning: 'Radiant with a golden complexion, adorned in splendid garments, wearing earrings that gleam, with flowing curly hair — your form is luminous.',
+			meaning: m.learn_v4_m(),
+			context: m.learn_v4_c(),
+			theme: m.learn_v4_t(),
 			words: [
-				{ word: 'Kanchan baran', meaning: 'Golden complexion' },
-				{ word: 'Biraj', meaning: 'Resplendent' },
-				{ word: 'Subesa', meaning: 'Beautifully attired' },
-				{ word: 'Kanan kundal', meaning: 'Earrings' },
-				{ word: 'Kunchit kesa', meaning: 'Curly hair' }
-			],
-			context: 'A formal description used for meditation (swarup dhyan). Every physical detail is an invitation to focus the mind on the Divine.',
-			theme: 'The divine form'
+				{ word: m.learn_v4_w0_w(), meaning: m.learn_v4_w0_m() },
+				{ word: m.learn_v4_w1_w(), meaning: m.learn_v4_w1_m() },
+				{ word: m.learn_v4_w2_w(), meaning: m.learn_v4_w2_m() },
+				{ word: m.learn_v4_w3_w(), meaning: m.learn_v4_w3_m() },
+				{ word: m.learn_v4_w4_w(), meaning: m.learn_v4_w4_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 05',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 05",
 			lines: [m.verse_5_1(), m.verse_5_2()],
-			meaning: 'In your hands shine a thunderbolt and a victory flag, while across your shoulder rests the sacred thread woven from munja grass.',
+			meaning: m.learn_v5_m(),
+			context: m.learn_v5_c(),
+			theme: m.learn_v5_t(),
 			words: [
-				{ word: 'Hath', meaning: 'Hand' },
-				{ word: 'Vajra', meaning: 'Thunderbolt' },
-				{ word: 'Dhwaja', meaning: 'Flag' },
-				{ word: 'Janeu', meaning: 'Sacred thread' }
-			],
-			context: 'Hanuman unites the traits of the warrior (flag/vajra) and the scholar (thread), showing that strength and wisdom are not separate.',
-			theme: 'Warrior & Scholar'
+				{ word: m.learn_v5_w0_w(), meaning: m.learn_v5_w0_m() },
+				{ word: m.learn_v5_w1_w(), meaning: m.learn_v5_w1_m() },
+				{ word: m.learn_v5_w2_w(), meaning: m.learn_v5_w2_m() },
+				{ word: m.learn_v5_w3_w(), meaning: m.learn_v5_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 06',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 06",
 			lines: [m.verse_6_1(), m.verse_6_2()],
-			meaning: 'You are the incarnation of Lord Shiva and the son of Kesari. Your immense radiance and power are worshipped by the whole world.',
+			meaning: m.learn_v6_m(),
+			context: m.learn_v6_c(),
+			theme: m.learn_v6_t(),
 			words: [
-				{ word: 'Sankar suvan', meaning: 'Shiva\'s incarnation' },
-				{ word: 'Kesri Nandan', meaning: 'Son of Kesari' },
-				{ word: 'Tej', meaning: 'Radiance' },
-				{ word: 'Jag vandan', meaning: 'Worshipped by all' }
-			],
-			context: 'Acknowledges Hanuman\'s divine origin as the 11th Rudra (Shiva) and his status as a world-venerated hero.',
-			theme: 'Divine incarnation'
+				{ word: m.learn_v6_w0_w(), meaning: m.learn_v6_w0_m() },
+				{ word: m.learn_v6_w1_w(), meaning: m.learn_v6_w1_m() },
+				{ word: m.learn_v6_w2_w(), meaning: m.learn_v6_w2_m() },
+				{ word: m.learn_v6_w3_w(), meaning: m.learn_v6_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 07',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 07",
 			lines: [m.verse_7_1(), m.verse_7_2()],
-			meaning: 'You are the storehouse of knowledge, full of virtues and extremely clever. You are always eager to perform the work of Lord Rama.',
+			meaning: m.learn_v7_m(),
+			context: m.learn_v7_c(),
+			theme: m.learn_v7_t(),
 			words: [
-				{ word: 'Vidyavan', meaning: 'Learned' },
-				{ word: 'Guni', meaning: 'Virtuous' },
-				{ word: 'Chatur', meaning: 'Clever' },
-				{ word: 'Ram kaj', meaning: 'Ram\'s work' },
-				{ word: 'Aatur', meaning: 'Eager/Restless to serve' }
-			],
-			context: 'Defines Hanuman\'s character: despite his infinite power, his only desire is humble service to his Lord.',
-			theme: 'Eagerness for service'
+				{ word: m.learn_v7_w0_w(), meaning: m.learn_v7_w0_m() },
+				{ word: m.learn_v7_w1_w(), meaning: m.learn_v7_w1_m() },
+				{ word: m.learn_v7_w2_w(), meaning: m.learn_v7_w2_m() },
+				{ word: m.learn_v7_w3_w(), meaning: m.learn_v7_w3_m() },
+				{ word: m.learn_v7_w4_w(), meaning: m.learn_v7_w4_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 08',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 08",
 			lines: [m.verse_8_1(), m.verse_8_2()],
-			meaning: 'You take great delight in listening to the stories of the Lord. Ram, Lakshman, and Sita dwell in your heart.',
+			meaning: m.learn_v8_m(),
+			context: m.learn_v8_c(),
+			theme: m.learn_v8_t(),
 			words: [
-				{ word: 'Prabu charitra', meaning: 'The Lord\'s stories' },
-				{ word: 'Rasiya', meaning: 'Delight taker/Devotee' },
-				{ word: 'Man Basiya', meaning: 'Dweller in the heart' }
-			],
-			context: 'Highlights that even the most powerful being finds the greatest joy in simple devotion and listening to the Divine name.',
-			theme: 'Devotional delight'
+				{ word: m.learn_v8_w0_w(), meaning: m.learn_v8_w0_m() },
+				{ word: m.learn_v8_w1_w(), meaning: m.learn_v8_w1_m() },
+				{ word: m.learn_v8_w2_w(), meaning: m.learn_v8_w2_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 09',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 09",
 			lines: [m.verse_9_1(), m.verse_9_2()],
-			meaning: 'You appeared before Mother Sita in a tiny form. You assumed a terrifying form to burn the city of Lanka.',
+			meaning: m.learn_v9_m(),
+			context: m.learn_v9_c(),
+			theme: m.learn_v9_t(),
 			words: [
-				{ word: 'Sukshma roop', meaning: 'Tiny form' },
-				{ word: 'Siyahi', meaning: 'Sita' },
-				{ word: 'Vikat roop', meaning: 'Terrifying form' },
-				{ word: 'Jarava', meaning: 'Burned' }
-			],
-			context: 'Refers to Hanuman\'s mastery over physical form (Siddhis), allowing him to be subtle and fierce as required.',
-			theme: 'Shapeshifting & Power'
+				{ word: m.learn_v9_w0_w(), meaning: m.learn_v9_w0_m() },
+				{ word: m.learn_v9_w1_w(), meaning: m.learn_v9_w1_m() },
+				{ word: m.learn_v9_w2_w(), meaning: m.learn_v9_w2_m() },
+				{ word: m.learn_v9_w3_w(), meaning: m.learn_v9_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 10',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 10",
 			lines: [m.verse_10_1(), m.verse_10_2()],
-			meaning: 'Assuming a gigantic form, you destroyed the demons and successfully completed the tasks assigned by Lord Rama.',
+			meaning: m.learn_v10_m(),
+			context: m.learn_v10_c(),
+			theme: m.learn_v10_t(),
 			words: [
-				{ word: 'Bhima roop', meaning: 'Gigantic form' },
-				{ word: 'Asur', meaning: 'Demons' },
-				{ word: 'Sanghare', meaning: 'Destroyed' },
-				{ word: 'Sanvare', meaning: 'Completed/Perfected' }
-			],
-			context: 'Showcases Hanuman as the ultimate protector who clears all obstacles for the righteous and the Divine.',
-			theme: 'Protector & Accomplisher'
+				{ word: m.learn_v10_w0_w(), meaning: m.learn_v10_w0_m() },
+				{ word: m.learn_v10_w1_w(), meaning: m.learn_v10_w1_m() },
+				{ word: m.learn_v10_w2_w(), meaning: m.learn_v10_w2_m() },
+				{ word: m.learn_v10_w3_w(), meaning: m.learn_v10_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 11',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 11",
 			lines: [m.verse_11_1(), m.verse_11_2()],
-			meaning: 'You brought the Sanjeevani herb and revived Lakshmana. Lord Rama embraced you with overwhelming joy.',
+			meaning: m.learn_v11_m(),
+			context: m.learn_v11_c(),
+			theme: m.learn_v11_t(),
 			words: [
-				{ word: 'Sanjivan', meaning: 'Life-giving herb' },
-				{ word: 'Lakhan', meaning: 'Lakshmana' },
-				{ word: 'Jiyaye', meaning: 'Revived' },
-				{ word: 'Harashi', meaning: 'Joyfully' },
-				{ word: 'Ur laye', meaning: 'Embraced' }
-			],
-			context: 'One of Hanuman\'s most famous feats, demonstrating his resourcefulness and his irreplaceable importance to Rama.',
-			theme: 'Lifesaver & Devotion'
+				{ word: m.learn_v11_w0_w(), meaning: m.learn_v11_w0_m() },
+				{ word: m.learn_v11_w1_w(), meaning: m.learn_v11_w1_m() },
+				{ word: m.learn_v11_w2_w(), meaning: m.learn_v11_w2_m() },
+				{ word: m.learn_v11_w3_w(), meaning: m.learn_v11_w3_m() },
+				{ word: m.learn_v11_w4_w(), meaning: m.learn_v11_w4_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 12',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 12",
 			lines: [m.verse_12_1(), m.verse_12_2()],
-			meaning: 'Lord Rama praised you immensely and said, "You are as dear to me as my own brother Bharata."',
+			meaning: m.learn_v12_m(),
+			context: m.learn_v12_c(),
+			theme: m.learn_v12_t(),
 			words: [
-				{ word: 'Bahut badai', meaning: 'Much praise' },
-				{ word: 'Priye', meaning: 'Dear' },
-				{ word: 'Bharat-hi', meaning: 'Bharata' },
-				{ word: 'Sam bhai', meaning: 'Equal to a brother' }
-			],
-			context: 'The highest honor a devotee can receive—to be considered equal to the Lord\'s most beloved kin.',
-			theme: 'Divine love'
+				{ word: m.learn_v12_w0_w(), meaning: m.learn_v12_w0_m() },
+				{ word: m.learn_v12_w1_w(), meaning: m.learn_v12_w1_m() },
+				{ word: m.learn_v12_w2_w(), meaning: m.learn_v12_w2_m() },
+				{ word: m.learn_v12_w3_w(), meaning: m.learn_v12_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 13',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 13",
 			lines: [m.verse_13_1(), m.verse_13_2()],
-			meaning: '"May the thousand-mouthed serpent sing your glory," saying this, the Lord of Shri (Rama) embraced you once more.',
+			meaning: m.learn_v13_m(),
+			context: m.learn_v13_c(),
+			theme: m.learn_v13_t(),
 			words: [
-				{ word: 'Sahas badan', meaning: 'Thousand mouths' },
-				{ word: 'Yash', meaning: 'Glory' },
-				{ word: 'Gaave', meaning: 'Sings' },
-				{ word: 'Shripati', meaning: 'Lord of Rama' }
-			],
-			context: 'Signifies that even a thousand mouths are insufficient to fully describe Hanuman\'s greatness.',
-			theme: 'Infinite Glory'
+				{ word: m.learn_v13_w0_w(), meaning: m.learn_v13_w0_m() },
+				{ word: m.learn_v13_w1_w(), meaning: m.learn_v13_w1_m() },
+				{ word: m.learn_v13_w2_w(), meaning: m.learn_v13_w2_m() },
+				{ word: m.learn_v13_w3_w(), meaning: m.learn_v13_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 14',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 14",
 			lines: [m.verse_14_1(), m.verse_14_2()],
-			meaning: 'Sage Sanaka and his brothers, Lord Brahma, and other great saints, along with Narada and Goddess Saraswati, sing your glory.',
+			meaning: m.learn_v14_m(),
+			context: m.learn_v14_c(),
+			theme: m.learn_v14_t(),
 			words: [
-				{ word: 'Sankadik', meaning: 'Sanaka & others' },
-				{ word: 'Brahmadi', meaning: 'Brahma & others' },
-				{ word: 'Narad', meaning: 'Narada' },
-				{ word: 'Sarad', meaning: 'Saraswati' }
-			],
-			context: 'Hanuman is venerated by the highest cosmic beings and deities across the universe.',
-			theme: 'Universal Veneration'
+				{ word: m.learn_v14_w0_w(), meaning: m.learn_v14_w0_m() },
+				{ word: m.learn_v14_w1_w(), meaning: m.learn_v14_w1_m() },
+				{ word: m.learn_v14_w2_w(), meaning: m.learn_v14_w2_m() },
+				{ word: m.learn_v14_w3_w(), meaning: m.learn_v14_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 15',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 15",
 			lines: [m.verse_15_1(), m.verse_15_2()],
-			meaning: 'Even Yama, Kubera, and the guardians of the directions are unable to fully describe your glory. How then can poets find words for it?',
+			meaning: m.learn_v15_m(),
+			context: m.learn_v15_c(),
+			theme: m.learn_v15_t(),
 			words: [
-				{ word: 'Yam', meaning: 'God of Death' },
-				{ word: 'Kuber', meaning: 'God of Wealth' },
-				{ word: 'Digpal', meaning: 'Guardians' },
-				{ word: 'Kavi', meaning: 'Poets' }
-			],
-			context: 'Implies that Hanuman\'s virtues are beyond human (and even divine) comprehension and literary expression.',
-			theme: 'Ineffable Greatness'
+				{ word: m.learn_v15_w0_w(), meaning: m.learn_v15_w0_m() },
+				{ word: m.learn_v15_w1_w(), meaning: m.learn_v15_w1_m() },
+				{ word: m.learn_v15_w2_w(), meaning: m.learn_v15_w2_m() },
+				{ word: m.learn_v15_w3_w(), meaning: m.learn_v15_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 16',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 16",
 			lines: [m.verse_16_1(), m.verse_16_2()],
-			meaning: 'You did a great favor for Sugriva by introducing him to Rama and helping him regain his kingdom.',
+			meaning: m.learn_v16_m(),
+			context: m.learn_v16_c(),
+			theme: m.learn_v16_t(),
 			words: [
-				{ word: 'Upkar', meaning: 'Favor/Help' },
-				{ word: 'Sugreevahin', meaning: 'Sugriva' },
-				{ word: 'Ram milaye', meaning: 'United with Ram' },
-				{ word: 'Rajpad', meaning: 'Kingdom' }
-			],
-			context: 'Highlights Hanuman as a mediator and a king-maker. He connects the seeker with the Divine.',
-			theme: 'Mediator & Helper'
+				{ word: m.learn_v16_w0_w(), meaning: m.learn_v16_w0_m() },
+				{ word: m.learn_v16_w1_w(), meaning: m.learn_v16_w1_m() },
+				{ word: m.learn_v16_w2_w(), meaning: m.learn_v16_w2_m() },
+				{ word: m.learn_v16_w3_w(), meaning: m.learn_v16_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 17',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 17",
 			lines: [m.verse_17_1(), m.verse_17_2()],
-			meaning: 'Vibhishana accepted your counsel and became the Lord of Lanka, as is known throughout the world.',
+			meaning: m.learn_v17_m(),
+			context: m.learn_v17_c(),
+			theme: m.learn_v17_t(),
 			words: [
-				{ word: 'Mantra', meaning: 'Counsel' },
-				{ word: 'Vibheeshan', meaning: 'Vibhishana' },
-				{ word: 'Lankeshwar', meaning: 'Lord of Lanka' }
-			],
-			context: 'Shows Hanuman\'s influence on the righteous. Even in the enemy camp, his wisdom guided Vibhishana to safety.',
-			theme: 'Wise Counsel'
+				{ word: m.learn_v17_w0_w(), meaning: m.learn_v17_w0_m() },
+				{ word: m.learn_v17_w1_w(), meaning: m.learn_v17_w1_m() },
+				{ word: m.learn_v17_w2_w(), meaning: m.learn_v17_w2_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 18',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 18",
 			lines: [m.verse_18_1(), m.verse_18_2()],
-			meaning: 'You swallowed the Sun, which is thousands of miles away, thinking it was a sweet, ripe fruit.',
+			meaning: m.learn_v18_m(),
+			context: m.learn_v18_c(),
+			theme: m.learn_v18_t(),
 			words: [
-				{ word: 'Sahastra', meaning: 'Thousand' },
-				{ word: 'Bhanu', meaning: 'Sun' },
-				{ word: 'Leelyo', meaning: 'Swallowed' },
-				{ word: 'Madhur phal', meaning: 'Sweet fruit' }
-			],
-			context: 'Refers to Hanuman\'s childhood feat, showing his boundless appetite for the impossible and his raw cosmic power.',
-			theme: 'Boundless Power'
+				{ word: m.learn_v18_w0_w(), meaning: m.learn_v18_w0_m() },
+				{ word: m.learn_v18_w1_w(), meaning: m.learn_v18_w1_m() },
+				{ word: m.learn_v18_w2_w(), meaning: m.learn_v18_w2_m() },
+				{ word: m.learn_v18_w3_w(), meaning: m.learn_v18_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 19',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 19",
 			lines: [m.verse_19_1(), m.verse_19_2()],
-			meaning: 'Placing the Lord\'s ring in your mouth, you leaped across the ocean; it was no surprise for you.',
+			meaning: m.learn_v19_m(),
+			context: m.learn_v19_c(),
+			theme: m.learn_v19_t(),
 			words: [
-				{ word: 'Mudrika', meaning: 'Ring' },
-				{ word: 'Mukh', meaning: 'Mouth' },
-				{ word: 'Jaladhi', meaning: 'Ocean' },
-				{ word: 'Langhi gaye', meaning: 'Leaped across' }
-			],
-			context: 'When one has the Lord\'s name or token, even crossing the vast ocean of existence becomes effortless.',
-			theme: 'Faith & Feat'
+				{ word: m.learn_v19_w0_w(), meaning: m.learn_v19_w0_m() },
+				{ word: m.learn_v19_w1_w(), meaning: m.learn_v19_w1_m() },
+				{ word: m.learn_v19_w2_w(), meaning: m.learn_v19_w2_m() },
+				{ word: m.learn_v19_w3_w(), meaning: m.learn_v19_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 20',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 20",
 			lines: [m.verse_20_1(), m.verse_20_2()],
-			meaning: 'All the difficult tasks in this world become easy by your grace.',
+			meaning: m.learn_v20_m(),
+			context: m.learn_v20_c(),
+			theme: m.learn_v20_t(),
 			words: [
-				{ word: 'Durgaam', meaning: 'Difficult' },
-				{ word: 'Jagat', meaning: 'World' },
-				{ word: 'Sugam', meaning: 'Easy' },
-				{ word: 'Anugraha', meaning: 'Grace' }
-			],
-			context: 'A powerful assurance that no obstacle is too great when Hanuman\'s blessing is present.',
-			theme: 'Dispeller of Obstacles'
+				{ word: m.learn_v20_w0_w(), meaning: m.learn_v20_w0_m() },
+				{ word: m.learn_v20_w1_w(), meaning: m.learn_v20_w1_m() },
+				{ word: m.learn_v20_w2_w(), meaning: m.learn_v20_w2_m() },
+				{ word: m.learn_v20_w3_w(), meaning: m.learn_v20_w3_m() },
+			]
 		},
-
-		// --- Chaupais (21 to 25 Detailed) ---
 		{
-			type: 'Chaupai',
-			label: 'Verse 21',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 21",
 			lines: [m.verse_21_1(), m.verse_21_2()],
-			meaning: "You are the sentinel at Rama's door. No one can enter His presence without your permission and grace.",
+			meaning: m.learn_v21_m(),
+			context: m.learn_v21_c(),
+			theme: m.learn_v21_t(),
 			words: [
-				{ word: 'Ram duwaare', meaning: "At Rama's door" },
-				{ word: 'Rakhvare', meaning: 'Guardian / Sentinel' },
-				{ word: 'Aajna binu', meaning: 'Without permission' },
-				{ word: 'Paisare', meaning: 'Entry / Admission' }
-			],
-			context: 'Symbolizes that Hanuman is the bridge to the Divine. One must first find favor with the devotee (Hanuman) to reach the Beloved (Rama).',
-			theme: 'The Divine Gatekeeper'
+				{ word: m.learn_v21_w0_w(), meaning: m.learn_v21_w0_m() },
+				{ word: m.learn_v21_w1_w(), meaning: m.learn_v21_w1_m() },
+				{ word: m.learn_v21_w2_w(), meaning: m.learn_v21_w2_m() },
+				{ word: m.learn_v21_w3_w(), meaning: m.learn_v21_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 22',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 22",
 			lines: [m.verse_22_1(), m.verse_22_2()],
-			meaning: 'All happiness comes to those who take refuge in you. With you as the protector, there is no reason to fear anything in the universe.',
+			meaning: m.learn_v22_m(),
+			context: m.learn_v22_c(),
+			theme: m.learn_v22_t(),
 			words: [
-				{ word: 'Sab sukh', meaning: 'All happiness' },
-				{ word: 'Lahai', meaning: 'Obtain / Receive' },
-				{ word: 'Sarna', meaning: 'Refuge / Shelter' },
-				{ word: 'Rakshak', meaning: 'Protector' },
-				{ word: 'Darna', meaning: 'To fear' }
-			],
-			context: 'Assures the devotee that surrender to Hanuman grants complete protection, making one fearless against all worldly and spiritual obstacles.',
-			theme: 'Refuge & Fearlessness'
+				{ word: m.learn_v22_w0_w(), meaning: m.learn_v22_w0_m() },
+				{ word: m.learn_v22_w1_w(), meaning: m.learn_v22_w1_m() },
+				{ word: m.learn_v22_w2_w(), meaning: m.learn_v22_w2_m() },
+				{ word: m.learn_v22_w3_w(), meaning: m.learn_v22_w3_m() },
+				{ word: m.learn_v22_w4_w(), meaning: m.learn_v22_w4_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 23',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 23",
 			lines: [m.verse_23_1(), m.verse_23_2()],
-			meaning: 'Only you can contain your own immense radiance and power. All the three worlds tremble when you give a mighty roar.',
+			meaning: m.learn_v23_m(),
+			context: m.learn_v23_c(),
+			theme: m.learn_v23_t(),
 			words: [
-				{ word: 'Aapan tej', meaning: 'Your own power/radiance' },
-				{ word: 'Samharo', meaning: 'Control / Manage' },
-				{ word: 'Teenon lok', meaning: 'Three worlds' },
-				{ word: 'Haank', meaning: 'Roar / Call' },
-				{ word: 'Kaanpai', meaning: 'Tremble' }
-			],
-			context: "Describes Hanuman's raw, unbridled energy. He is the master of his own cosmic force, which is so great that it awes the entire universe.",
-			theme: 'Mastery of Power'
+				{ word: m.learn_v23_w0_w(), meaning: m.learn_v23_w0_m() },
+				{ word: m.learn_v23_w1_w(), meaning: m.learn_v23_w1_m() },
+				{ word: m.learn_v23_w2_w(), meaning: m.learn_v23_w2_m() },
+				{ word: m.learn_v23_w3_w(), meaning: m.learn_v23_w3_m() },
+				{ word: m.learn_v23_w4_w(), meaning: m.learn_v23_w4_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 24',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 24",
 			lines: [m.verse_24_1(), m.verse_24_2()],
-			meaning: "Ghosts and evil spirits do not venture near when the name of the 'Great Hero' (Mahaveer) is recited with devotion.",
+			meaning: m.learn_v24_m(),
+			context: m.learn_v24_c(),
+			theme: m.learn_v24_t(),
 			words: [
-				{ word: 'Bhoot Pishach', meaning: 'Ghosts / Evil spirits' },
-				{ word: 'Nikat', meaning: 'Near' },
-				{ word: 'Nahin aavai', meaning: 'Do not approach' },
-				{ word: 'Mahaveer', meaning: 'Great Hero' }
-			],
-			context: "Establishes Hanuman's name as a powerful mantra for protection. His presence dispels negativity and dark influences instantly.",
-			theme: 'Spiritual Protection'
+				{ word: m.learn_v24_w0_w(), meaning: m.learn_v24_w0_m() },
+				{ word: m.learn_v24_w1_w(), meaning: m.learn_v24_w1_m() },
+				{ word: m.learn_v24_w2_w(), meaning: m.learn_v24_w2_m() },
+				{ word: m.learn_v24_w3_w(), meaning: m.learn_v24_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 25',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 25",
 			lines: [m.verse_25_1(), m.verse_25_2()],
-			meaning: 'All diseases are cured and all pains are removed by the continuous chanting of the name of the brave Lord Hanuman.',
+			meaning: m.learn_v25_m(),
+			context: m.learn_v25_c(),
+			theme: m.learn_v25_t(),
 			words: [
-				{ word: 'Nasai rog', meaning: 'Cures diseases' },
-				{ word: 'Hare sab peera', meaning: 'Removes all pain' },
-				{ word: 'Japat nirantara', meaning: 'Chanting continuously' },
-				{ word: 'Hanumat beera', meaning: 'Brave Hanuman' }
-			],
-			context: 'Focuses on the healing aspect of Hanuman-bhakti. Faith and constant remembrance are presented as the ultimate remedy for physical and mental suffering.',
-			theme: 'Healing & Relief'
+				{ word: m.learn_v25_w0_w(), meaning: m.learn_v25_w0_m() },
+				{ word: m.learn_v25_w1_w(), meaning: m.learn_v25_w1_m() },
+				{ word: m.learn_v25_w2_w(), meaning: m.learn_v25_w2_m() },
+				{ word: m.learn_v25_w3_w(), meaning: m.learn_v25_w3_m() },
+			]
 		},
-		// --- Chaupais (26 to 30 Detailed) ---
 		{
-			type: 'Chaupai',
-			label: 'Verse 26',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 26",
 			lines: [m.verse_26_1(), m.verse_26_2()],
-			meaning: 'Hanuman delivers from all troubles those who meditate on him with their mind, actions, and speech.',
+			meaning: m.learn_v26_m(),
+			context: m.learn_v26_c(),
+			theme: m.learn_v26_t(),
 			words: [
-				{ word: 'Sankat te', meaning: 'From troubles / distress' },
-				{ word: 'Churavai', meaning: 'Releases / Delivers' },
-				{ word: 'Man Kram Vachan', meaning: 'Mind, Action, Speech' },
-				{ word: 'Dhyan jo lavai', meaning: 'Whoever meditates' }
-			],
-			context: 'Emphasizes the power of sincere, total devotion. When one aligns their thoughts, words, and deeds in remembrance, Hanuman provides liberation from distress.',
-			theme: 'Total Surrender'
+				{ word: m.learn_v26_w0_w(), meaning: m.learn_v26_w0_m() },
+				{ word: m.learn_v26_w1_w(), meaning: m.learn_v26_w1_m() },
+				{ word: m.learn_v26_w2_w(), meaning: m.learn_v26_w2_m() },
+				{ word: m.learn_v26_w3_w(), meaning: m.learn_v26_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 27',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 27",
 			lines: [m.verse_27_1(), m.verse_27_2()],
-			meaning: 'Though Rama is the supreme ascetic King over all, you are the one who accomplishes and manages all His tasks.',
+			meaning: m.learn_v27_m(),
+			context: m.learn_v27_c(),
+			theme: m.learn_v27_t(),
 			words: [
-				{ word: 'Sab para', meaning: 'Over all' },
-				{ word: 'Tapasvee raja', meaning: 'Ascetic King' },
-				{ word: 'Kaaj sakal', meaning: 'All tasks' },
-				{ word: 'Tum saajaa', meaning: 'Managed by you' }
-			],
-			context: "Highlights Hanuman as the 'Karta' (doer) who carries out the Divine will. It shows that the greatest power of Rama is manifested through Hanuman's service.",
-			theme: 'The Divine Instrument'
+				{ word: m.learn_v27_w0_w(), meaning: m.learn_v27_w0_m() },
+				{ word: m.learn_v27_w1_w(), meaning: m.learn_v27_w1_m() },
+				{ word: m.learn_v27_w2_w(), meaning: m.learn_v27_w2_m() },
+				{ word: m.learn_v27_w3_w(), meaning: m.learn_v27_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 28',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 28",
 			lines: [m.verse_28_1(), m.verse_28_2()],
-			meaning: 'Whoever brings any other desire or longing to you obtains the limitless fruits of life.',
+			meaning: m.learn_v28_m(),
+			context: m.learn_v28_c(),
+			theme: m.learn_v28_t(),
 			words: [
-				{ word: 'Aur manorath', meaning: 'Other desires/longings' },
-				{ word: 'Jo koee lavai', meaning: 'Whoever brings' },
-				{ word: 'Amit', meaning: 'Limitless / Boundless' },
-				{ word: 'Jeevan phal', meaning: 'Fruit of life' }
-			],
-			context: 'Assures the devotee that Hanuman is not just for spiritual liberation but also for fulfilling the righteous desires of life, leading to ultimate satisfaction.',
-			theme: 'Fulfillment of Desires'
+				{ word: m.learn_v28_w0_w(), meaning: m.learn_v28_w0_m() },
+				{ word: m.learn_v28_w1_w(), meaning: m.learn_v28_w1_m() },
+				{ word: m.learn_v28_w2_w(), meaning: m.learn_v28_w2_m() },
+				{ word: m.learn_v28_w3_w(), meaning: m.learn_v28_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 29',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 29",
 			lines: [m.verse_29_1(), m.verse_29_2()],
-			meaning: 'Your glory and splendor shine throughout the four ages and illuminate the entire world.',
+			meaning: m.learn_v29_m(),
+			context: m.learn_v29_c(),
+			theme: m.learn_v29_t(),
 			words: [
-				{ word: 'Chaaron yug', meaning: 'The four ages' },
-				{ word: 'Partap', meaning: 'Glory / Splendor' },
-				{ word: 'Parsiddh', meaning: 'Famous / Renowned' },
-				{ word: 'Jagat ujiyaara', meaning: 'World illumination' }
-			],
-			context: "Proclaims Hanuman's immortality (Chiranjeevi status). His power is not limited by time or era; it is a constant presence in the universe.",
-			theme: 'Eternal Radiance'
+				{ word: m.learn_v29_w0_w(), meaning: m.learn_v29_w0_m() },
+				{ word: m.learn_v29_w1_w(), meaning: m.learn_v29_w1_m() },
+				{ word: m.learn_v29_w2_w(), meaning: m.learn_v29_w2_m() },
+				{ word: m.learn_v29_w3_w(), meaning: m.learn_v29_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 30',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 30",
 			lines: [m.verse_30_1(), m.verse_30_2()],
-			meaning: 'You are the protector of saints and the destroyer of evil forces, the beloved darling of Lord Rama.',
+			meaning: m.learn_v30_m(),
+			context: m.learn_v30_c(),
+			theme: m.learn_v30_t(),
 			words: [
-				{ word: 'Sadhu Sant', meaning: 'Saints and Sages' },
-				{ word: 'Rakhware', meaning: 'Guardian / Protector' },
-				{ word: 'Asur nikandan', meaning: 'Destroyer of demons' },
-				{ word: 'Ram dulaare', meaning: "Rama's beloved" }
-			],
-			context: "Defines Hanuman's role as the guardian of the righteous and the scourge of the wicked. His status as Rama's most beloved devotee is his ultimate identity.",
-			theme: 'Guardian of Righteousness'
+				{ word: m.learn_v30_w0_w(), meaning: m.learn_v30_w0_m() },
+				{ word: m.learn_v30_w1_w(), meaning: m.learn_v30_w1_m() },
+				{ word: m.learn_v30_w2_w(), meaning: m.learn_v30_w2_m() },
+				{ word: m.learn_v30_w3_w(), meaning: m.learn_v30_w3_m() },
+			]
 		},
-		// --- Chaupais (31 to 35 Detailed) ---
 		{
-			type: 'Chaupai',
-			label: 'Verse 31',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 31",
 			lines: [m.verse_31_1(), m.verse_31_2()],
-			meaning: 'You are the bestower of the eight supernatural powers and nine divine treasures; this boon was granted to you by Mother Sita.',
+			meaning: m.learn_v31_m(),
+			context: m.learn_v31_c(),
+			theme: m.learn_v31_t(),
 			words: [
-				{ word: 'Ashta Siddhi', meaning: 'Eight supernatural powers' },
-				{ word: 'Nau Nidhi', meaning: 'Nine divine treasures' },
-				{ word: 'Ke Data', meaning: 'Giver / Bestower' },
-				{ word: 'Janaki Mata', meaning: 'Mother Sita' }
-			],
-			context: 'Hanuman is the repository of all spiritual and material wealth. His authority to grant these to devotees is a direct gift from the Divine Mother.',
-			theme: 'Bestower of Boons'
+				{ word: m.learn_v31_w0_w(), meaning: m.learn_v31_w0_m() },
+				{ word: m.learn_v31_w1_w(), meaning: m.learn_v31_w1_m() },
+				{ word: m.learn_v31_w2_w(), meaning: m.learn_v31_w2_m() },
+				{ word: m.learn_v31_w3_w(), meaning: m.learn_v31_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 32',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 32",
 			lines: [m.verse_32_1(), m.verse_32_2()],
-			meaning: "You possess the elixir of Rama's name; may you always remain the humble servant of the Lord of the Raghus.",
+			meaning: m.learn_v32_m(),
+			context: m.learn_v32_c(),
+			theme: m.learn_v32_t(),
 			words: [
-				{ word: 'Ram Rasayan', meaning: "Rama's elixir / medicine" },
-				{ word: 'Tumhare pasa', meaning: 'In your possession' },
-				{ word: 'Sada raho', meaning: 'Always remain' },
-				{ word: 'Raghupati ke dasa', meaning: 'Servant of Rama' }
-			],
-			context: 'Devotion is presented as a spiritual medicine (Rasayan) that heals the soul. Hanuman is the keeper of this nectar, yet he remains the ultimate example of humility.',
-			theme: 'The Elixir of Devotion'
+				{ word: m.learn_v32_w0_w(), meaning: m.learn_v32_w0_m() },
+				{ word: m.learn_v32_w1_w(), meaning: m.learn_v32_w1_m() },
+				{ word: m.learn_v32_w2_w(), meaning: m.learn_v32_w2_m() },
+				{ word: m.learn_v32_w3_w(), meaning: m.learn_v32_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 33',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 33",
 			lines: [m.verse_33_1(), m.verse_33_2()],
-			meaning: 'By singing your praises, one reaches Rama and is released from the sufferings and cycles of many lifetimes.',
+			meaning: m.learn_v33_m(),
+			context: m.learn_v33_c(),
+			theme: m.learn_v33_t(),
 			words: [
-				{ word: 'Tumhare bhajan', meaning: 'Your worship / chanting' },
-				{ word: 'Ram ko paavai', meaning: 'Attains Lord Rama' },
-				{ word: 'Janam janam', meaning: 'Life after life' },
-				{ word: 'Dukh bisraavai', meaning: 'Erases all sorrows' }
-			],
-			context: 'Reaffirms that the path to God is through his most beloved devotee. Chanting Hanuman’s name resolves the karmic debts of countless past lives.',
-			theme: 'Path to the Divine'
+				{ word: m.learn_v33_w0_w(), meaning: m.learn_v33_w0_m() },
+				{ word: m.learn_v33_w1_w(), meaning: m.learn_v33_w1_m() },
+				{ word: m.learn_v33_w2_w(), meaning: m.learn_v33_w2_m() },
+				{ word: m.learn_v33_w3_w(), meaning: m.learn_v33_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 34',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 34",
 			lines: [m.verse_34_1(), m.verse_34_2()],
-			meaning: 'At the moment of death, such a soul goes to the eternal abode of Rama, staying forever in the state of a Divine devotee.',
+			meaning: m.learn_v34_m(),
+			context: m.learn_v34_c(),
+			theme: m.learn_v34_t(),
 			words: [
-				{ word: 'Anta kaal', meaning: 'End time / Death' },
-				{ word: 'Raghubar pur', meaning: "Rama's divine city" },
-				{ word: 'Hari-bhakta', meaning: 'Devotee of God' },
-				{ word: 'Kahaaee', meaning: 'Is called / Known as' }
-			],
-			context: 'Guarantees spiritual safety. It promises that the devotee’s soul will never fall back into ignorance, ensuring an eternal connection with the Divine.',
-			theme: 'Eternal Liberation'
+				{ word: m.learn_v34_w0_w(), meaning: m.learn_v34_w0_m() },
+				{ word: m.learn_v34_w1_w(), meaning: m.learn_v34_w1_m() },
+				{ word: m.learn_v34_w2_w(), meaning: m.learn_v34_w2_m() },
+				{ word: m.learn_v34_w3_w(), meaning: m.learn_v34_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 35',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 35",
 			lines: [m.verse_35_1(), m.verse_35_2()],
-			meaning: 'One need not contemplate any other deity; by serving Hanuman alone, one attains every form of happiness and peace.',
+			meaning: m.learn_v35_m(),
+			context: m.learn_v35_c(),
+			theme: m.learn_v35_t(),
 			words: [
-				{ word: 'Aur devta', meaning: 'Other deities' },
-				{ word: 'Chit na dharayi', meaning: 'Keep not in mind' },
-				{ word: 'Hanumat sei', meaning: 'Serving Hanuman' },
-				{ word: 'Sarva sukh', meaning: 'All happiness' }
-			],
-			context: "Reaffirms Hanuman's absolute sufficiency in this age (Kali Yuga). He is seen as the complete proxy for the Divine, capable of providing total fulfillment.",
-			theme: 'Single-minded Devotion'
+				{ word: m.learn_v35_w0_w(), meaning: m.learn_v35_w0_m() },
+				{ word: m.learn_v35_w1_w(), meaning: m.learn_v35_w1_m() },
+				{ word: m.learn_v35_w2_w(), meaning: m.learn_v35_w2_m() },
+				{ word: m.learn_v35_w3_w(), meaning: m.learn_v35_w3_m() },
+			]
 		},
-		// --- Chaupais (36 to 40 Detailed) ---
 		{
-			type: 'Chaupai',
-			label: 'Verse 36',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 36",
 			lines: [m.verse_36_1(), m.verse_36_2()],
-			meaning: 'All difficulties cease and all pain vanishes for those who remember and meditate upon the mighty hero, Hanuman.',
+			meaning: m.learn_v36_m(),
+			context: m.learn_v36_c(),
+			theme: m.learn_v36_t(),
 			words: [
-				{ word: 'Sankat katai', meaning: 'Troubles are cut away' },
-				{ word: 'Mite sab peera', meaning: 'All pain vanishes' },
-				{ word: 'Jo sumirai', meaning: 'Whoever remembers' },
-				{ word: 'Hanumat balbeera', meaning: 'Mighty hero Hanuman' }
-			],
-			context: "A powerful reassurance of Hanuman's role as the dispeller of obstacles. It emphasizes that constant remembrance is the key to mental and physical relief.",
-			theme: 'Remover of Sorrows'
+				{ word: m.learn_v36_w0_w(), meaning: m.learn_v36_w0_m() },
+				{ word: m.learn_v36_w1_w(), meaning: m.learn_v36_w1_m() },
+				{ word: m.learn_v36_w2_w(), meaning: m.learn_v36_w2_m() },
+				{ word: m.learn_v36_w3_w(), meaning: m.learn_v36_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 37',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 37",
 			lines: [m.verse_37_1(), m.verse_37_2()],
-			meaning: 'Victory, victory, victory to Lord Hanuman! Please bestow your grace upon me in the manner of a supreme Divine Teacher.',
+			meaning: m.learn_v37_m(),
+			context: m.learn_v37_c(),
+			theme: m.learn_v37_t(),
 			words: [
-				{ word: 'Jai Jai Jai', meaning: 'Victory, victory, victory' },
-				{ word: 'Gosai', meaning: 'Lord / Master' },
-				{ word: 'Kripa karahu', meaning: 'Bestow grace' },
-				{ word: 'Gurudev ki nai', meaning: 'Like a divine teacher' }
-			],
-			context: 'Tulsidas elevates Hanuman to the status of a Guru. It is a humble plea for guidance, acknowledging that spiritual progress requires the grace of a master.',
-			theme: 'The Divine Teacher'
+				{ word: m.learn_v37_w0_w(), meaning: m.learn_v37_w0_m() },
+				{ word: m.learn_v37_w1_w(), meaning: m.learn_v37_w1_m() },
+				{ word: m.learn_v37_w2_w(), meaning: m.learn_v37_w2_m() },
+				{ word: m.learn_v37_w3_w(), meaning: m.learn_v37_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 38',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 38",
 			lines: [m.verse_38_1(), m.verse_38_2()],
-			meaning: 'Whoever recites this prayer a hundred times is released from all bondages and attains supreme bliss.',
+			meaning: m.learn_v38_m(),
+			context: m.learn_v38_c(),
+			theme: m.learn_v38_t(),
 			words: [
-				{ word: 'Sath bar', meaning: 'A hundred times' },
-				{ word: 'Paath kar', meaning: 'Recites / Reads' },
-				{ word: 'Chhutahi bandi', meaning: 'Released from bondage' },
-				{ word: 'Maha sukh', meaning: 'Supreme bliss' }
-			],
-			context: 'Mentions the specific fruit of dedicated practice. Bondage refers to both physical constraints and the spiritual cycle of birth and death (Samsara).',
-			theme: 'Liberation from Bondage'
+				{ word: m.learn_v38_w0_w(), meaning: m.learn_v38_w0_m() },
+				{ word: m.learn_v38_w1_w(), meaning: m.learn_v38_w1_m() },
+				{ word: m.learn_v38_w2_w(), meaning: m.learn_v38_w2_m() },
+				{ word: m.learn_v38_w3_w(), meaning: m.learn_v38_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 39',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 39",
 			lines: [m.verse_39_1(), m.verse_39_2()],
-			meaning: 'Whoever reads this Hanuman Chalisa attains spiritual perfection; Lord Shiva himself is the witness to this truth.',
+			meaning: m.learn_v39_m(),
+			context: m.learn_v39_c(),
+			theme: m.learn_v39_t(),
 			words: [
-				{ word: 'Jo yeh padhai', meaning: 'Whoever reads this' },
-				{ word: 'Siddhi', meaning: 'Spiritual perfection' },
-				{ word: 'Saakhi', meaning: 'Witness' },
-				{ word: 'Gaureesa', meaning: 'Lord Shiva' }
-			],
-			context: 'Provides a divine guarantee. Shiva, the ultimate yogi, validates that this hymn is a shortcut to spiritual accomplishment (Siddhi).',
-			theme: 'Divine Validation'
+				{ word: m.learn_v39_w0_w(), meaning: m.learn_v39_w0_m() },
+				{ word: m.learn_v39_w1_w(), meaning: m.learn_v39_w1_m() },
+				{ word: m.learn_v39_w2_w(), meaning: m.learn_v39_w2_m() },
+				{ word: m.learn_v39_w3_w(), meaning: m.learn_v39_w3_m() },
+			]
 		},
 		{
-			type: 'Chaupai',
-			label: 'Verse 40',
+			type: m.learn_type_chaupai(),
+			label: m.learn_label_verse() + " 40",
 			lines: [m.verse_40_1(), m.verse_40_2()],
-			meaning: 'Tulsidas is forever the servant of the Lord. O Master, please make my heart your permanent abode.',
+			meaning: m.learn_v40_m(),
+			context: m.learn_v40_c(),
+			theme: m.learn_v40_t(),
 			words: [
-				{ word: 'Tulsidas', meaning: 'The author' },
-				{ word: 'Sada hari chera', meaning: 'Forever servant of God' },
-				{ word: 'Keejae nath', meaning: 'Please do, O Lord' },
-				{ word: 'Hrdaye mah dera', meaning: 'Abode in the heart' }
-			],
-			context: 'The final prayer of the author. It shifts the focus from external feats to internal presence, asking the Divine to dwell within the heart forever.',
-			theme: 'The Eternal Resident'
+				{ word: m.learn_v40_w0_w(), meaning: m.learn_v40_w0_m() },
+				{ word: m.learn_v40_w1_w(), meaning: m.learn_v40_w1_m() },
+				{ word: m.learn_v40_w2_w(), meaning: m.learn_v40_w2_m() },
+				{ word: m.learn_v40_w3_w(), meaning: m.learn_v40_w3_m() },
+			]
 		},
-
-		// --- Concluding Doha ---
 		{
-			type: 'Doha',
-			label: 'Concluding',
+			type: m.learn_type_doha(),
+			label: m.learn_label_concluding(),
 			lines: [m.concluding_doha_1(), m.concluding_doha_2(), m.concluding_doha_3(), m.concluding_doha_4()],
-			meaning: 'O Son of the Wind, dispeller of misfortunes, the embodiment of auspiciousness — please dwell in my heart along with Lord Ram, Lakshman, and Mother Sita.',
+			meaning: m.learn_c1_m(),
+			context: m.learn_c1_c(),
+			theme: m.learn_c1_t(),
 			words: [
-				{ word: 'Sankat haran', meaning: 'Remover of troubles' },
-				{ word: 'Mangal murti', meaning: 'Form of auspiciousness' },
-				{ word: 'Hrdaye', meaning: 'In the heart' },
-				{ word: 'Basahu', meaning: 'Reside / Dwell' }
-			],
-			context: 'The final prayer asks Hanuman to stay eternally within the devotee\'s heart, bringing the entire Ram Durbar with him.',
-			theme: 'Eternal presence'
+				{ word: m.learn_c1_w0_w(), meaning: m.learn_c1_w0_m() },
+				{ word: m.learn_c1_w1_w(), meaning: m.learn_c1_w1_m() },
+				{ word: m.learn_c1_w2_w(), meaning: m.learn_c1_w2_m() },
+				{ word: m.learn_c1_w3_w(), meaning: m.learn_c1_w3_m() },
+			]
 		}
 	]);
 
@@ -690,7 +680,7 @@
 									class="tab flex-1 rounded-xl transition-all {activeTab === 'meaning' ? 'tab-active bg-base-100 shadow-sm' : ''}"
 									onclick={() => (activeTab = 'meaning')}
 								>
-									Meaning
+									{m.meaning()}
 								</button>
 								<button
 									role="tab"
@@ -698,7 +688,7 @@
 									class="tab flex-1 rounded-xl transition-all {activeTab === 'words' ? 'tab-active bg-base-100 shadow-sm' : ''}"
 									onclick={() => (activeTab = 'words')}
 								>
-									Words
+									{m.words()}
 								</button>
 								<button
 									role="tab"
@@ -706,7 +696,7 @@
 									class="tab rounded-xl flex-1 transition-all {activeTab === 'context' ? 'tab-active bg-base-100 shadow-sm' : ''}"
 									onclick={() => (activeTab = 'context')}
 								>
-									Context
+									{m.context()}
 								</button>
 							</div>
 
