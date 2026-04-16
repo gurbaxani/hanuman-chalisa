@@ -652,7 +652,7 @@
 				>
 					<div class="mb-4 flex items-center gap-2">
 						<span
-							class="badge font-mono badge-sm transition-all duration-300
+							class="badge badge-sm transition-all duration-300
 							{activeIndex === i ? 'badge-primary' : 'badge-ghost opacity-30 group-hover:opacity-100'}"
 						>
 							{item.label}

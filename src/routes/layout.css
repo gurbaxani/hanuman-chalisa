@@ -9,7 +9,7 @@
 @import '@fontsource/noto-sans-bengali';
 
 @theme {
-	--font-sans: 'Noto Sans', 'Noto Sans Gujarati', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Tamil', 'Noto Sans Kannada', 'Noto Sans Bengali', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 /* 1. Plugin & Theme Definitions (daisyUI v5 Style) */
@@ -83,6 +83,41 @@
 
 /* 2. Base Styles */
 @layer base {
+	:root {
+		font-family: var(--font-sans);
+	}
+
+	:lang(hi),
+	:lang(mr),
+	:lang(bho) {
+		--font-sans: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+	}
+
+	:lang(te) {
+		--font-sans: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+	}
+
+	:lang(ta) {
+		--font-sans: 'Noto Sans Tamil', 'Noto Sans', sans-serif;
+	}
+
+	:lang(kn) {
+		--font-sans: 'Noto Sans Kannada', 'Noto Sans', sans-serif;
+	}
+
+	:lang(gu) {
+		--font-sans: 'Noto Sans Gujarati', 'Noto Sans', sans-serif;
+	}
+
+	:lang(bn) {
+		--font-sans: 'Noto Sans Bengali', 'Noto Sans', sans-serif;
+	}
+
+	html,
+	body {
+		font-family: var(--font-sans);
+	}
+
 	/* Use system font-smoothing for cleaner text */
 	html {
 		-webkit-font-smoothing: antialiased;

@@ -124,7 +124,7 @@
 					></div>
 
 					<span
-						class="mb-4 badge font-mono badge-sm transition-all duration-300
+						class="mb-4 badge badge-sm transition-all duration-300
                         {activeVerse === i
 							? 'badge-secondary'
 							: 'badge-ghost opacity-30 group-hover:opacity-100'}"
