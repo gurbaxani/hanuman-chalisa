@@ -61,4 +61,4 @@ A premium, mobile-first web application for reading and learning the Hanuman Cha
 
 ## 📜 License
 
-Created with ❤️ for spiritual connection. Jai Shree Ram!
+Distributed under the MIT License. Created with ❤️ for spiritual connection. Jai Shree Ram!
