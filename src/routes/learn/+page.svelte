@@ -738,5 +738,16 @@
 				</div>
 			{/each}
 		</div>
+
+		<footer class="mt-24 text-center px-6 pb-12 border-t border-base-content/5 pt-12">
+			<div class="flex flex-col items-center gap-4 max-w-md mx-auto">
+				<div class="w-12 h-12 rounded-2xl bg-base-200 flex items-center justify-center text-base-content/30">
+					<i class="ph-duotone ph-info text-2xl"></i>
+				</div>
+				<p class="text-sm opacity-60 leading-relaxed font-medium">
+					{m.ai_disclaimer_learn()}
+				</p>
+			</div>
+		</footer>
 	</div>
 </main>

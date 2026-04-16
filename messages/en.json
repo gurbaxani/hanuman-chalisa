@@ -633,5 +633,7 @@
 	"learn_c1_w2_w": "Hrdaye",
 	"learn_c1_w2_m": "In the heart",
 	"learn_c1_w3_w": "Basahu",
-	"learn_c1_w3_m": "Reside / Dwell"
+	"learn_c1_w3_m": "Reside / Dwell",
+	"ai_disclaimer": "All translations are AI-generated and may contain errors. We welcome corrections.",
+	"ai_disclaimer_learn": "All translations are AI-generated and may contain errors. Go to Settings > Contact to submit a correction."
 }

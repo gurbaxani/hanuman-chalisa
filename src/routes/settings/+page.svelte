@@ -192,6 +192,13 @@
 					</a>
 				</div>
 			</section>
+
+			<div class="mt-16 text-center px-6 flex flex-col items-center gap-2 opacity-30">
+				<i class="ph-duotone ph-warning-circle text-xl"></i>
+				<p class="text-xs leading-relaxed max-w-xs mx-auto">
+					{m.ai_disclaimer()}
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
