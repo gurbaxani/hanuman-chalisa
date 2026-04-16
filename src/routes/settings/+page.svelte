@@ -32,7 +32,7 @@
 				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">Preference</h2>
 				<div class="bg-base-200/50 rounded-3xl overflow-hidden border border-base-300/50">
 					<a
-						href={resolve(localizeHref('/language') as Pathname)}
+						href={resolve(localizeHref('/') as Pathname)}
 						class="flex items-center justify-between p-5 hover:bg-base-300/50 transition-all border-b border-base-300/50"
 					>
 						<div class="flex items-center gap-4">

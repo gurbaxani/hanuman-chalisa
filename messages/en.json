@@ -100,5 +100,12 @@
 	"hello_world": "Hello, {name} from en!",
 	"read": "Read",
 	"learn": "Learn",
-	"settings": "Settings"
+	"settings": "Settings",
+	"welcome_subtitle": "Please select your language",
+	"setup_subtitle": "Peace and wisdom in your pocket",
+	"feature_read_desc": "A beautiful, distraction-free reading experience for the sacred verses.",
+	"feature_learn_desc": "Deep dive into the profound meaning and significance of every stanza.",
+	"feature_free_title": "100% Free",
+	"feature_free_desc": "Completely free to use. Optional donations help support the platform.",
+	"get_started": "Get Started"
 }

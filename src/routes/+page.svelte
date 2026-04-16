@@ -4,8 +4,8 @@
 	import { locales, localizeHref, setLocale, getLocale } from '$lib/paraglide/runtime.js';
 	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
-	import { goto } from '$app/navigation';
 	import type { Locale } from '$lib/paraglide/runtime.js';
+	import { m } from '$lib/paraglide/messages';
 
 	let step = $state(0);
 	let selectedLocale = $state(getLocale());
@@ -31,7 +31,8 @@
 	}
 
 	async function finishSetup() {
-		await goto(resolve(localizeHref('/read', { locale: selectedLocale }) as Pathname));
+		const targetUrl = resolve(localizeHref('/read', { locale: selectedLocale }) as Pathname);
+		window.location.href = targetUrl;
 	}
 
 	let greetingIndex = $state(0);
@@ -94,8 +95,8 @@
 					<div class="app-icon-wrapper">
 						<i class="ph-duotone ph-hands-praying"></i>
 					</div>
-					<h1 class="setup-title">Hanuman Chalisa</h1>
-					<p class="setup-subtitle">Peace and wisdom in your pocket</p>
+					<h1 class="setup-title">{m.title()}</h1>
+					<p class="setup-subtitle">{m.setup_subtitle()}</p>
 				</header>
 
 				<div class="features-list">
@@ -104,8 +105,8 @@
 							<i class="ph-duotone ph-book-open-text"></i>
 						</div>
 						<div class="feature-text">
-							<h3>Read</h3>
-							<p>A beautiful, distraction-free reading experience for the sacred verses.</p>
+							<h3>{m.read()}</h3>
+							<p>{m.feature_read_desc()}</p>
 						</div>
 					</div>
 
@@ -114,8 +115,8 @@
 							<i class="ph-duotone ph-lightbulb"></i>
 						</div>
 						<div class="feature-text">
-							<h3>Learn</h3>
-							<p>Deep dive into the profound meaning and significance of every stanza.</p>
+							<h3>{m.learn()}</h3>
+							<p>{m.feature_learn_desc()}</p>
 						</div>
 					</div>
 
@@ -124,14 +125,14 @@
 							<i class="ph-duotone ph-heart"></i>
 						</div>
 						<div class="feature-text">
-							<h3>100% Free</h3>
-							<p>Completely free to use. Optional donations help support the platform.</p>
+							<h3>{m.feature_free_title()}</h3>
+							<p>{m.feature_free_desc()}</p>
 						</div>
 					</div>
 				</div>
 
 				<button class="btn btn-primary btn-lg rounded-2xl w-full mt-8" onclick={finishSetup}>
-					Get Started
+					{m.get_started()}
 				</button>
 			</div>
 		{/if}

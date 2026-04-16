@@ -100,5 +100,12 @@
 	"hello_world": "Hello, {name} from bho!",
 	"read": "पढ़ीं",
 	"learn": "सीखीं",
-	"settings": "सेटिंग्स"
+	"settings": "सेटिंग्स",
+	"welcome_subtitle": "आपन भाषा चुनीं",
+	"setup_subtitle": "शांति आ ज्ञान अब रउआ जेब में",
+	"feature_read_desc": "पवित्र पद खातिर एगो सुंदर आ बिना कवनो बाधा के पढ़े के अनुभव।",
+	"feature_learn_desc": "हर छंद के गहिरा अरथ आ महत्व के विस्तार से समझीं।",
+	"feature_free_title": "100% मुफत",
+	"feature_free_desc": "इस्तेमाल करे खातिर पूरा मुफत। अउरी रउआ मर्जी होखे त दान देके एह मंच के मदद कर सकेनी।",
+	"get_started": "शुरू करीं"
 }
