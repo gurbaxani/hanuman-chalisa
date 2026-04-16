@@ -8,7 +8,7 @@ A modern, mobile-first web application for reading and learning the Hanuman Chal
 
 - **🌍 Multi-language Support**: Fully localized in 9 languages:
   - English, Hindi (हिन्दी), Marathi (मराठी), Gujarati (ગુજરાતી), Tamil (தமிழ்), Telugu (తెలుగు), Kannada (ಕನ್ನಡ), Bengali (বাংলা), and Bhojpuri (भोजपुरी).
-- **📱 Mobile-First Design**: Optimized for a stunning handheld experience with glassmorphism and smooth transitions.
+- **📱 Mobile-First Design**: Optimized for a great handheld experience with purposeful UI and smooth transitions.
 - **✨ Scroll-Based Highlight**: Intelligent verse highlighting using `IntersectionObserver`. As you scroll, the current verse illuminates automatically—no tapping required.
 - **🌙 Theme Support**: Dynamic theme switching with support for premium dark and light modes.
 - **📖 Integrated Learning**: Dedicated routes for reading and learning each verse.
@@ -20,7 +20,7 @@ A modern, mobile-first web application for reading and learning the Hanuman Chal
 - **Styling**: [DaisyUI](https://daisyui.com) + Vanilla CSS (Custom tokens)
 - **Internationalization**: [Paraglide JS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs) (URL-based strategy)
 - **Icons**: [@phosphor-icons/web](https://phosphoricons.com)
-- **Typography**: Diverse Noto Sans families for perfect script rendering across Indian languages.
+- **Typography**: Diverse [Noto](https://fonts.google.com/noto) Sans families for perfect script rendering across Indian languages.
 
 ## 🚀 Getting Started
 
