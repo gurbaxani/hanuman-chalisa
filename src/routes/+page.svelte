@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { locales, localizeHref, getLocale } from '$lib/paraglide/runtime.js';
 	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
 	import type { Locale } from '$lib/paraglide/runtime.js';
-	import { m } from '$lib/paraglide/messages';
 
 	let selectedLocale = $state(getLocale());
 
