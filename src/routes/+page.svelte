@@ -171,7 +171,10 @@
 
 	.setup-header {
 		margin-bottom: 2.5rem;
-		min-height: 5rem;
+		min-height: 10rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	.app-icon-wrapper {
@@ -187,11 +190,12 @@
 	}
 
 	.setup-title {
-		font-size: 2.5rem;
+		font-size: 2.25rem;
 		font-weight: 900;
 		letter-spacing: -0.05em;
-		line-height: 1;
+		line-height: 1.2;
 		margin-bottom: 0.5rem;
+		text-wrap: balance;
 	}
 
 	.setup-subtitle {
