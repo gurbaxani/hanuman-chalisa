@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { locales, localizeHref, setLocale, getLocale } from '$lib/paraglide/runtime.js';
+	import { locales, localizeHref, getLocale } from '$lib/paraglide/runtime.js';
 	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
 	import type { Locale } from '$lib/paraglide/runtime.js';
 	import { m } from '$lib/paraglide/messages';
 
-	let step = $state(0);
 	let selectedLocale = $state(getLocale());
 
 	const languageNames: Record<string, { native: string; english: string }> = {
@@ -26,12 +25,7 @@
 		selectedLocale = locale;
 		// Update the cookie and runtime locale
 		document.cookie = `PARAGLIDE_LOCALE=${locale}; path=/; max-age=31536000; SameSite=Lax`;
-		setLocale(locale, { reload: false });
-		step = 1;
-	}
-
-	async function finishSetup() {
-		const targetUrl = resolve(localizeHref('/read', { locale: selectedLocale }) as Pathname);
+		const targetUrl = resolve(localizeHref('/welcome', { locale }) as Pathname);
 		window.location.href = targetUrl;
 	}
 
@@ -58,84 +52,36 @@
 
 <div class="setup-container">
 	<div class="content-wrapper">
-		{#if step === 0}
-			<div in:fade={{ duration: 400 }} class="step-card">
-				<header class="setup-header">
-					{#key greetingIndex}
-						<div in:fade={{ duration: 600 }}>
-							<h1 class="setup-title">{greetings[greetingIndex].title}</h1>
-							<p class="setup-subtitle">{greetings[greetingIndex].subtitle}</p>
-						</div>
-					{/key}
-				</header>
+		<div in:fade={{ duration: 400 }} class="step-card">
+			<header class="setup-header">
+				{#key greetingIndex}
+					<div in:fade={{ duration: 600 }}>
+						<h1 class="setup-title">{greetings[greetingIndex].title}</h1>
+						<p class="setup-subtitle">{greetings[greetingIndex].subtitle}</p>
+					</div>
+				{/key}
+			</header>
 
-				<div class="language-grid">
-					{#each locales as locale (locale)}
-						<button
-							class="language-button {selectedLocale === locale ? 'active' : ''}"
-							onclick={() => handleLocaleSelect(locale)}
-						>
-							<div class="lang-tag">{locale.toUpperCase()}</div>
-							<div class="lang-info">
-								<span class="lang-native">{languageNames[locale]?.native || locale}</span>
-								<span class="lang-english">{languageNames[locale]?.english || ''}</span>
+			<div class="language-grid">
+				{#each locales as locale (locale)}
+					<button
+						class="language-button {selectedLocale === locale ? 'active' : ''}"
+						onclick={() => handleLocaleSelect(locale)}
+					>
+						<div class="lang-tag">{locale.toUpperCase()}</div>
+						<div class="lang-info">
+							<span class="lang-native">{languageNames[locale]?.native || locale}</span>
+							<span class="lang-english">{languageNames[locale]?.english || ''}</span>
+						</div>
+						{#if selectedLocale === locale}
+							<div class="check-icon">
+								<i class="ph-duotone ph-check-circle"></i>
 							</div>
-							{#if selectedLocale === locale}
-								<div class="check-icon">
-									<i class="ph-duotone ph-check-circle"></i>
-								</div>
-							{/if}
-						</button>
-					{/each}
-				</div>
+						{/if}
+					</button>
+				{/each}
 			</div>
-		{:else if step === 1}
-			<div in:fly={{ y: 20, duration: 500 }} class="step-card centered">
-				<header class="setup-header">
-					<div class="app-icon-wrapper">
-						<i class="ph-duotone ph-hands-praying"></i>
-					</div>
-					<h1 class="setup-title">{m.title()}</h1>
-					<p class="setup-subtitle">{m.setup_subtitle()}</p>
-				</header>
-
-				<div class="features-list">
-					<div class="feature-item">
-						<div class="feature-icon bg-primary/10 text-primary">
-							<i class="ph-duotone ph-book-open-text"></i>
-						</div>
-						<div class="feature-text">
-							<h3>{m.read()}</h3>
-							<p>{m.feature_read_desc()}</p>
-						</div>
-					</div>
-
-					<div class="feature-item">
-						<div class="feature-icon bg-secondary/10 text-secondary">
-							<i class="ph-duotone ph-lightbulb"></i>
-						</div>
-						<div class="feature-text">
-							<h3>{m.learn()}</h3>
-							<p>{m.feature_learn_desc()}</p>
-						</div>
-					</div>
-
-					<div class="feature-item">
-						<div class="feature-icon bg-accent/10 text-accent">
-							<i class="ph-duotone ph-heart"></i>
-						</div>
-						<div class="feature-text">
-							<h3>{m.feature_free_title()}</h3>
-							<p>{m.feature_free_desc()}</p>
-						</div>
-					</div>
-				</div>
-
-				<button class="btn btn-primary btn-lg rounded-2xl w-full mt-8" onclick={finishSetup}>
-					{m.get_started()}
-				</button>
-			</div>
-		{/if}
+		</div>
 	</div>
 </div>
 
@@ -165,28 +111,12 @@
 		box-shadow: 0 25px 50px -12px oklch(var(--bc) / 0.1);
 	}
 
-	.step-card.centered {
-		text-align: center;
-	}
-
 	.setup-header {
 		margin-bottom: 2.5rem;
 		min-height: 10rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-	}
-
-	.app-icon-wrapper {
-		font-size: 4rem;
-		color: oklch(var(--p));
-		margin-bottom: 1rem;
-		animation: float 3s ease-in-out infinite;
-	}
-
-	@keyframes float {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-10px); }
 	}
 
 	.setup-title {
@@ -273,39 +203,5 @@
 		margin-left: auto;
 		font-size: 1.5rem;
 		color: oklch(var(--p));
-	}
-
-	.features-list {
-		display: grid;
-		gap: 1.5rem;
-		text-align: left;
-	}
-
-	.feature-item {
-		display: flex;
-		gap: 1.25rem;
-	}
-
-	.feature-icon {
-		width: 3.5rem;
-		height: 3.5rem;
-		min-width: 3.5rem;
-		border-radius: 1.25rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 1.75rem;
-	}
-
-	.feature-text h3 {
-		font-size: 1.25rem;
-		font-weight: 800;
-		margin-bottom: 0.25rem;
-	}
-
-	.feature-text p {
-		font-size: 0.875rem;
-		opacity: 0.7;
-		line-height: 1.5;
 	}
 </style>

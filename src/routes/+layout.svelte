@@ -28,7 +28,7 @@
 	{/each}
 </div>
 
-{#if page.url.pathname !== '/'}
+{#if page.url.pathname !== '/' && page.url.pathname !== '/welcome'}
 	<div class="dock dock-xl">
 		<button
 			onclick={() => goto(resolve(localizeHref('/read') as Pathname))}
