@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
+	import { onMount } from 'svelte';
 
 	let activeVerse: number | null = $state(null);
 
@@ -49,6 +50,31 @@
 	function toggleVerse(index: number) {
 		activeVerse = activeVerse === index ? null : index;
 	}
+
+	onMount(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const index = entry.target.getAttribute('data-index');
+						if (index !== null) {
+							activeVerse = parseInt(index);
+						}
+					}
+				});
+			},
+			{
+				// This creates a detection window in the center of the screen
+				rootMargin: '-40% 0px -40% 0px',
+				threshold: 0
+			}
+		);
+
+		const elements = document.querySelectorAll('.verse-card');
+		elements.forEach((el) => observer.observe(el));
+
+		return () => observer.disconnect();
+	});
 </script>
 
 <main class="min-h-screen bg-base-100 font-sans text-base-content antialiased">
@@ -86,8 +112,9 @@
 			{#each verses as line, i (i)}
 				<button
 					onclick={() => toggleVerse(i)}
-					class="group relative flex flex-col items-center py-8 transition-all duration-500 focus:outline-none active:scale-95
-                    {activeVerse === i ? 'rounded-3xl bg-base-200' : 'bg-transparent'}"
+					data-index={i}
+					class="verse-card group relative flex flex-col items-center py-8 transition-all duration-500 focus:outline-none active:scale-95
+                    {activeVerse === i ? 'rounded-3xl bg-base-200 shadow-sm' : 'bg-transparent'}"
 				>
 					<div
 						class="absolute inset-y-8 left-4 w-1 rounded-full transition-all duration-500
