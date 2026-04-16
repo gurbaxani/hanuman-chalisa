@@ -147,7 +147,7 @@
 		background: radial-gradient(circle at top right, oklch(var(--p) / 0.05), transparent),
 			radial-gradient(circle at bottom left, oklch(var(--s) / 0.05), transparent);
 		padding: 1.5rem;
-		font-family: 'Inter', sans-serif;
+		font-family: var(--font-sans);
 	}
 
 	.content-wrapper {
