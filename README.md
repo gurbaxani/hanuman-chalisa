@@ -1,6 +1,6 @@
 # 🕉️ Hanuman Chalisa
 
-A premium, mobile-first web application for reading and learning the Hanuman Chalisa. Designed with high attention to detail, motion, and accessibility, supporting multiple Indian languages with beautiful typography.
+A modern, mobile-first web application for reading and learning the Hanuman Chalisa. Designed with high attention to detail, motion, and accessibility, supporting multiple Indian languages with beautiful typography.
 
 ![Hanuman Chalisa App](app-icon.png)
 
