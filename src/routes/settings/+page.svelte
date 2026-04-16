@@ -21,6 +21,7 @@
 	const currentLocale = getLocale();
 
 	let showThemeModal = $state(false);
+	let showCopiedToast = $state(false);
 
 	const themes: { id: Theme; label: string; icon: string; color: string }[] = [
 		{ id: 'system', label: 'System', icon: 'ph-monitor', color: 'bg-blue-500/10 text-blue-500' },
@@ -28,6 +29,25 @@
 		{ id: 'dark', label: 'Night', icon: 'ph-moon-stars', color: 'bg-indigo-500/10 text-indigo-500' }
 	];
 
+	async function shareApp() {
+		const shareData = {
+			title: 'Hanuman Chalisa',
+			text: 'Read and learn Hanuman Chalisa with this beautiful app.',
+			url: 'https://hanumanji.ashwinig.com/'
+		};
+
+		try {
+			if (navigator.share) {
+				await navigator.share(shareData);
+			} else {
+				await navigator.clipboard.writeText(shareData.url);
+				showCopiedToast = true;
+				setTimeout(() => (showCopiedToast = false), 2000);
+			}
+		} catch (err) {
+			console.error('Error sharing:', err);
+		}
+	}
 </script>
 
 <svelte:head>
@@ -116,7 +136,10 @@
 			<section>
 				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">Project</h2>
 				<div class="bg-base-200/50 rounded-3xl overflow-hidden border border-base-300/50">
-					<button class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all border-b border-base-300/50 text-primary">
+					<button
+						onclick={shareApp}
+						class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all border-b border-base-300/50 text-primary"
+					>
 						<div class="flex items-center gap-4">
 							<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
 								<i class="ph-duotone ph-share-network text-xl"></i>
@@ -148,6 +171,15 @@
 		</div>
 	</div>
 </div>
+
+{#if showCopiedToast}
+	<div class="toast toast-center bottom-24 z-100">
+		<div class="alert border border-base-300 shadow-xl rounded-2xl py-3 px-5 flex items-center gap-3">
+			<i class="ph-bold ph-check text-primary text-lg"></i>
+			<span class="font-bold text-sm">Link copied to clipboard</span>
+		</div>
+	</div>
+{/if}
 
 {#if showThemeModal}
 	<dialog class="modal modal-bottom sm:modal-middle modal-open">
