@@ -54,7 +54,7 @@
 		<div in:fade={{ duration: 400 }} class="step-card">
 			<header class="setup-header">
 				{#key greetingIndex}
-					<div in:fade={{ duration: 600 }}>
+					<div in:fade={{ duration: 600 }} lang={locales[greetingIndex]}>
 						<h1 class="setup-title">{greetings[greetingIndex].title}</h1>
 						<p class="setup-subtitle">{greetings[greetingIndex].subtitle}</p>
 					</div>
@@ -66,6 +66,7 @@
 					<button
 						class="language-button {selectedLocale === locale ? 'active' : ''}"
 						onclick={() => handleLocaleSelect(locale)}
+						lang={locale}
 					>
 						<div class="lang-tag">{locale.toUpperCase()}</div>
 						<div class="lang-info">

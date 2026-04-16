@@ -80,7 +80,7 @@
 							</div>
 							<div class="flex flex-col">
 								<span class="font-bold">{m.language()}</span>
-								<span class="text-xs opacity-60">{languageNames[currentLocale] || currentLocale}</span>
+								<span class="text-xs opacity-60" lang={currentLocale}>{languageNames[currentLocale] || currentLocale}</span>
 							</div>
 						</div>
 						<i class="ph-duotone ph-caret-right opacity-30 text-xl"></i>
