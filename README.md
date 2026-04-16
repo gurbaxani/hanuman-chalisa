@@ -1,42 +1,64 @@
-# sv
+# 🕉️ Hanuman Chalisa
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A premium, mobile-first web application for reading and learning the Hanuman Chalisa. Designed with high attention to detail, motion, and accessibility, supporting multiple Indian languages with beautiful typography.
 
-## Creating a project
+![Hanuman Chalisa App](app-icon.png)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## ✨ Features
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- **🌍 Multi-language Support**: Fully localized in 9 languages:
+  - English, Hindi (हिन्दी), Marathi (मराठी), Gujarati (ગુજરાતી), Tamil (தமிழ்), Telugu (తెలుగు), Kannada (ಕನ್ನಡ), Bengali (বাংলা), and Bhojpuri (भोजपुरी).
+- **📱 Mobile-First Design**: Optimized for a stunning handheld experience with glassmorphism and smooth transitions.
+- **✨ Scroll-Based Highlight**: Intelligent verse highlighting using `IntersectionObserver`. As you scroll, the current verse illuminates automatically—no tapping required.
+- **🌙 Theme Support**: Dynamic theme switching with support for premium dark and light modes.
+- **📖 Integrated Learning**: Dedicated routes for reading and learning each verse.
+- **⚡ High Performance**: Built with Svelte 5 and SvelteKit for near-instant load times and buttery smooth interactions.
 
-To recreate this project with the same configuration:
+## 🛠️ Technology Stack
 
-```sh
-# recreate this project
-pnpm dlx sv@0.15.1 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:none" sveltekit-adapter="adapter:static" paraglide="languageTags:en, hi, mr, gu, ta, te, kn, bn, bho+demo:yes" --install pnpm hanuman-chalisa
-```
+- **Framework**: [Svelte 5](https://svelte.dev) + [SvelteKit](https://kit.svelte.dev)
+- **Styling**: [DaisyUI](https://daisyui.com) + Vanilla CSS (Custom tokens)
+- **Internationalization**: [Paraglide JS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs) (URL-based strategy)
+- **Icons**: [@phosphor-icons/web](https://phosphoricons.com)
+- **Typography**: Diverse Noto Sans families for perfect script rendering across Indian languages.
 
-## Developing
+## 🚀 Getting Started
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Prerequisites
 
-```sh
-npm run dev
+- Node.js (v18+)
+- pnpm (recommended) or npm
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Installation
 
-## Building
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/gurbaxani/hanuman-chalisa.git
+   cd hanuman-chalisa
+   ```
 
-To create a production version of your app:
+2. Install dependencies:
+   ```sh
+   pnpm install
+   ```
 
-```sh
-npm run build
-```
+3. Start the development server:
+   ```sh
+   pnpm dev
+   ```
 
-You can preview the production build with `npm run preview`.
+4. Build for production:
+   ```sh
+   pnpm build
+   ```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## 📂 Project Structure
+
+- `src/routes`: Handles application routing and page logic.
+- `messages/`: Localization JSON files managed by Paraglide/Inlang.
+- `static/`: Public assets including app icons.
+- `src/lib/paraglide`: Generated runtime for internationalization.
+
+## 📜 License
+
+Created with ❤️ for spiritual connection. Jai Shree Ram!
