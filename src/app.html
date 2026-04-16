@@ -7,6 +7,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<meta name="text-scale" content="scale" />
+		<script>
+			(function () {
+				const theme = localStorage.getItem('theme') || 'system';
+				const html = document.documentElement;
+				if (theme === 'system') {
+					const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					html.setAttribute('data-theme', prefersDark ? 'dim' : 'cupcake');
+				} else {
+					html.setAttribute('data-theme', theme === 'dark' ? 'dim' : 'cupcake');
+				}
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 

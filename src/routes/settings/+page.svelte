@@ -3,6 +3,8 @@
 	import { localizeHref, getLocale } from '$lib/paraglide/runtime';
 	import type { Pathname } from '$app/types';
 	import * as m from '$lib/paraglide/messages.js';
+	import { themeState, type Theme } from '$lib/theme.svelte';
+	import '@phosphor-icons/web/regular';
 
 	const languageNames: Record<string, string> = {
 		en: 'English',
@@ -17,6 +19,15 @@
 	};
 
 	const currentLocale = getLocale();
+
+	let showThemeModal = $state(false);
+
+	const themes: { id: Theme; label: string; icon: string; color: string }[] = [
+		{ id: 'system', label: 'System', icon: 'ph-monitor', color: 'bg-blue-500/10 text-blue-500' },
+		{ id: 'light', label: 'Day', icon: 'ph-sun-dim', color: 'bg-orange-500/10 text-orange-500' },
+		{ id: 'dark', label: 'Night', icon: 'ph-moon-stars', color: 'bg-indigo-500/10 text-indigo-500' }
+	];
+
 </script>
 
 <svelte:head>
@@ -47,15 +58,27 @@
 						<i class="ph-duotone ph-caret-right opacity-30 text-xl"></i>
 					</a>
 
-					<div class="flex items-center justify-between p-5 hover:bg-base-300/50 transition-all">
-						<div class="flex items-center gap-4">
+					<button
+						onclick={() => (showThemeModal = true)}
+						class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all"
+					>
+						<div class="flex items-center gap-4 text-left">
 							<div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center">
 								<i class="ph-duotone ph-palette text-xl"></i>
 							</div>
-							<span class="font-bold">Theme</span>
+							<div class="flex flex-col">
+								<span class="font-bold">Theme</span>
+								<span class="text-xs opacity-60">Personalize your experience</span>
+							</div>
 						</div>
-						<span class="badge badge-neutral badge-sm font-bold opacity-50 uppercase tracking-wider">System</span>
-					</div>
+						<div class="flex items-center gap-2">
+							<span class="badge badge-neutral badge-sm font-bold opacity-50 uppercase tracking-wider">
+								{themes.find((t) => t.id === themeState.current)?.label}
+							</span>
+							<i class="ph-duotone ph-caret-right opacity-30 text-xl"></i>
+						</div>
+					</button>
+
 				</div>
 			</section>
 
@@ -106,3 +129,58 @@
 		</div>
 	</div>
 </div>
+
+{#if showThemeModal}
+	<dialog class="modal modal-bottom sm:modal-middle modal-open">
+		<div class="modal-box p-6 bg-base-100 rounded-[2.5rem] border border-base-300/50 shadow-2xl">
+			<div class="flex items-center justify-between mb-6 px-2">
+				<h3 class="text-xl font-black">Choose Theme</h3>
+				<button
+					onclick={() => (showThemeModal = false)}
+					class="btn btn-ghost btn-circle btn-sm bg-base-200"
+					aria-label="Close"
+				>
+					<i class="ph ph-x"></i>
+				</button>
+			</div>
+
+			<div class="grid gap-3">
+				{#each themes as theme (theme.id)}
+					<button
+						onclick={() => {
+							themeState.set(theme.id);
+							showThemeModal = false;
+						}}
+						class="flex items-center justify-between p-4 rounded-3xl hover:bg-base-200 transition-all group
+                        {themeState.current === theme.id ? 'bg-primary/10 border border-primary/20' : 'bg-base-200/50'}"
+					>
+						<div class="flex items-center gap-4 text-left">
+							<div class="w-12 h-12 rounded-2xl {theme.color} flex items-center justify-center group-hover:rotate-12 transition-transform">
+								<i class="ph-duotone {theme.icon} text-2xl"></i>
+							</div>
+							<div class="flex flex-col">
+								<span class="font-bold">{theme.label}</span>
+								<span class="text-xs opacity-50">
+									{#if theme.id === 'system'}
+										Follows device setting
+									{:else if theme.id === 'light'}
+										Clean and bright
+									{:else}
+										Easy on the eyes
+									{/if}
+								</span>
+							</div>
+						</div>
+						{#if themeState.current === theme.id}
+							<i class="ph ph-check-circle text-lg text-primary"></i>
+						{/if}
+					</button>
+				{/each}
+			</div>
+		</div>
+		<form method="dialog" class="modal-backdrop">
+			<button onclick={() => (showThemeModal = false)} aria-label="Close backdrop">close</button>
+		</form>
+	</dialog>
+{/if}
+
