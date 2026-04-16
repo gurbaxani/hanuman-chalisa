@@ -9,7 +9,7 @@
 	let email: string = $state('');
 
 	onMount(() => {
-		const handle = 'hello';
+		const handle = 'namaskar';
 		const domain = 'ashwinig.com';
 		email = `${handle}@${domain}`;
 	});
@@ -31,10 +31,10 @@
 	let showThemeModal = $state(false);
 	let showCopiedToast = $state(false);
 
-	const themes: { id: Theme; label: string; icon: string; color: string }[] = [
-		{ id: 'system', label: 'System', icon: 'ph-monitor', color: 'bg-blue-500/10 text-blue-500' },
-		{ id: 'light', label: 'Day', icon: 'ph-sun-dim', color: 'bg-orange-500/10 text-orange-500' },
-		{ id: 'dark', label: 'Night', icon: 'ph-moon-stars', color: 'bg-indigo-500/10 text-indigo-500' }
+	const themes: { id: Theme; label: () => string; icon: string; color: string }[] = [
+		{ id: 'system', label: m.theme_system, icon: 'ph-monitor', color: 'bg-blue-500/10 text-blue-500' },
+		{ id: 'light', label: m.theme_light, icon: 'ph-sun-dim', color: 'bg-orange-500/10 text-orange-500' },
+		{ id: 'dark', label: m.theme_dark, icon: 'ph-moon-stars', color: 'bg-indigo-500/10 text-indigo-500' }
 	];
 
 	async function shareApp() {
@@ -59,16 +59,16 @@
 </script>
 
 <svelte:head>
-	<title>Settings | {m.jai_shri_ram()}</title>
+	<title>{m.settings()} | {m.jai_shri_ram()}</title>
 </svelte:head>
 
 <div class="min-h-screen bg-base-100 pb-24">
 	<div class="px-4 py-8 max-w-lg mx-auto">
-		<h1 class="text-4xl font-black mb-10 tracking-tight">Settings</h1>
+		<h1 class="text-4xl font-black mb-10 tracking-tight">{m.settings()}</h1>
 
 		<div class="grid gap-6">
 			<section>
-				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">Preference</h2>
+				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">{m.preference()}</h2>
 				<div class="bg-base-200/50 rounded-3xl overflow-hidden border border-base-300/50">
 					<a
 						href={resolve(localizeHref('/') as Pathname)}
@@ -79,7 +79,7 @@
 								<i class="ph-duotone ph-translate text-xl"></i>
 							</div>
 							<div class="flex flex-col">
-								<span class="font-bold">Language</span>
+								<span class="font-bold">{m.language()}</span>
 								<span class="text-xs opacity-60">{languageNames[currentLocale] || currentLocale}</span>
 							</div>
 						</div>
@@ -95,13 +95,13 @@
 								<i class="ph-duotone ph-palette text-xl"></i>
 							</div>
 							<div class="flex flex-col">
-								<span class="font-bold">Theme</span>
-								<span class="text-xs opacity-60">Personalize your experience</span>
+								<span class="font-bold">{m.theme()}</span>
+								<span class="text-xs opacity-60">{m.theme_desc()}</span>
 							</div>
 						</div>
 						<div class="flex items-center gap-2">
 							<span class="badge badge-neutral badge-sm font-bold opacity-50 uppercase tracking-wider">
-								{themes.find((t) => t.id === themeState.current)?.label}
+								{themes.find((t) => t.id === themeState.current)?.label()}
 							</span>
 							<i class="ph-duotone ph-caret-right opacity-30 text-xl"></i>
 						</div>
@@ -111,7 +111,7 @@
 			</section>
 
 			<section>
-				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">Support</h2>
+				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">{m.support()}</h2>
 				<div class="bg-base-200/50 rounded-3xl overflow-hidden border border-base-300/50">
 					<button class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all border-b border-base-300/50">
 						<div class="flex items-center gap-4">
@@ -119,8 +119,8 @@
 								<i class="ph-duotone ph-heart text-xl"></i>
 							</div>
 							<div class="flex flex-col items-start">
-								<span class="font-bold text-left">Donate Rs. 11 monthly</span>
-								<span class="text-xs opacity-60">Small contributions help us grow</span>
+								<span class="font-bold text-left">{m.donate_small_title()}</span>
+								<span class="text-xs opacity-60">{m.donate_small_desc()}</span>
 							</div>
 						</div>
 						<i class="ph-duotone ph-arrow-square-out opacity-30 text-xl"></i>
@@ -132,8 +132,8 @@
 								<i class="ph-duotone ph-hand-coins text-xl"></i>
 							</div>
 							<div class="flex flex-col items-start">
-								<span class="font-bold text-left">Donate Rs. 101 once</span>
-								<span class="text-xs opacity-60">One-time support for the mission</span>
+								<span class="font-bold text-left">{m.donate_large_title()}</span>
+								<span class="text-xs opacity-60">{m.donate_large_desc()}</span>
 							</div>
 						</div>
 						<i class="ph-duotone ph-arrow-square-out opacity-30 text-xl"></i>
@@ -142,7 +142,7 @@
 			</section>
 
 			<section>
-				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">Project</h2>
+				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">{m.project()}</h2>
 				<div class="bg-base-200/50 rounded-3xl overflow-hidden border border-base-300/50">
 					<button
 						onclick={shareApp}
@@ -152,7 +152,7 @@
 							<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
 								<i class="ph-duotone ph-share-network text-xl"></i>
 							</div>
-							<span class="font-bold">Share Hanuman Chalisa</span>
+							<span class="font-bold">{m.share_title()}</span>
 						</div>
 						<i class="ph-duotone ph-arrow-square-out opacity-60 text-xl"></i>
 					</button>
@@ -166,8 +166,8 @@
 								<i class="ph-duotone ph-envelope text-xl"></i>
 							</div>
 							<div class="flex flex-col">
-								<span class="font-bold text-base-content">Contact</span>
-								<span class="text-xs opacity-60 text-base-content/60">Feedback or suggestions?</span>
+								<span class="font-bold text-base-content">{m.contact_title()}</span>
+								<span class="text-xs opacity-60 text-base-content/60">{m.contact_desc()}</span>
 							</div>
 						</div>
 						<i class="ph-duotone ph-arrow-square-out opacity-30 text-xl text-base-content"></i>
@@ -184,8 +184,8 @@
 								<i class="ph-duotone ph-github-logo text-xl"></i>
 							</div>
 							<div class="flex flex-col">
-								<span class="font-bold text-base-content">Source Code</span>
-								<span class="text-xs opacity-60 text-base-content/60">This app is open-source!</span>
+								<span class="font-bold text-base-content">{m.source_code_title()}</span>
+								<span class="text-xs opacity-60 text-base-content/60">{m.source_code_desc()}</span>
 							</div>
 						</div>
 						<i class="ph-duotone ph-arrow-square-out opacity-30 text-xl text-base-content"></i>
@@ -200,7 +200,7 @@
 	<div class="toast toast-center bottom-24 z-100">
 		<div class="alert border border-base-300 shadow-xl rounded-2xl py-3 px-5 flex items-center gap-3">
 			<i class="ph-bold ph-check text-primary text-lg"></i>
-			<span class="font-bold text-sm">Link copied to clipboard</span>
+			<span class="font-bold text-sm">{m.link_copied()}</span>
 		</div>
 	</div>
 {/if}
@@ -209,7 +209,7 @@
 	<dialog class="modal modal-bottom sm:modal-middle modal-open">
 		<div class="modal-box p-6 bg-base-100 rounded-[2.5rem] border border-base-300/50 shadow-2xl">
 			<div class="flex items-center justify-between mb-6 px-2">
-				<h3 class="text-xl font-black">Choose Theme</h3>
+				<h3 class="text-xl font-black">{m.choose_theme()}</h3>
 				<button
 					onclick={() => (showThemeModal = false)}
 					class="btn btn-ghost btn-circle btn-sm bg-base-200"
@@ -234,14 +234,14 @@
 								<i class="ph-duotone {theme.icon} text-2xl"></i>
 							</div>
 							<div class="flex flex-col">
-								<span class="font-bold">{theme.label}</span>
+								<span class="font-bold">{theme.label()}</span>
 								<span class="text-xs opacity-50">
 									{#if theme.id === 'system'}
-										Follows device setting
+										{m.theme_system_desc()}
 									{:else if theme.id === 'light'}
-										Clean and bright
+										{m.theme_light_desc()}
 									{:else}
-										Easy on the eyes
+										{m.theme_dark_desc()}
 									{/if}
 								</span>
 							</div>
