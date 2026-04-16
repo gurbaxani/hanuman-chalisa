@@ -5,6 +5,14 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import { themeState, type Theme } from '$lib/theme.svelte';
 	import '@phosphor-icons/web/regular';
+	import { onMount } from 'svelte';
+	let email: string = $state('');
+
+	onMount(() => {
+		const handle = 'hello';
+		const domain = 'ashwinig.com';
+		email = `${handle}@${domain}`;
+	});
 
 	const languageNames: Record<string, string> = {
 		en: 'English',
@@ -148,6 +156,22 @@
 						</div>
 						<i class="ph-duotone ph-arrow-square-out opacity-60 text-xl"></i>
 					</button>
+
+					<a
+						href="mailto:{email}"
+						class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all no-underline! pt-5! pb-5! border-b border-base-300/50"
+					>
+						<div class="flex items-center gap-4">
+							<div class="w-10 h-10 rounded-xl bg-base-content/10 text-base-content flex items-center justify-center">
+								<i class="ph-duotone ph-envelope text-xl"></i>
+							</div>
+							<div class="flex flex-col">
+								<span class="font-bold text-base-content">Contact</span>
+								<span class="text-xs opacity-60 text-base-content/60">Feedback or suggestions?</span>
+							</div>
+						</div>
+						<i class="ph-duotone ph-arrow-square-out opacity-30 text-xl text-base-content"></i>
+					</a>
 
 					<a
 						href="https://github.com/gurbaxani/hanuman-chalisa"
