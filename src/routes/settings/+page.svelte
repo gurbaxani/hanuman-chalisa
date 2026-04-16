@@ -174,6 +174,22 @@
 					</a>
 
 					<a
+						href={resolve(localizeHref('/privacy') as Pathname)}
+						class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all no-underline! pt-5! pb-5! border-b border-base-300/50"
+					>
+						<div class="flex items-center gap-4">
+							<div class="w-10 h-10 rounded-xl bg-base-content/10 text-base-content flex items-center justify-center">
+								<i class="ph-duotone ph-shield-check text-xl"></i>
+							</div>
+							<div class="flex flex-col">
+								<span class="font-bold text-base-content">{m.privacy_policy()}</span>
+								<span class="text-xs opacity-60 text-base-content/60">{m.privacy_policy_desc()}</span>
+							</div>
+						</div>
+						<i class="ph-duotone ph-caret-right opacity-30 text-xl text-base-content"></i>
+					</a>
+
+					<a
 						href="https://github.com/gurbaxani/hanuman-chalisa"
 						target="_blank"
 						rel="noopener noreferrer"

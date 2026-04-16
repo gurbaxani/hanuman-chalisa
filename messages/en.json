@@ -635,5 +635,20 @@
 	"learn_c1_w3_w": "Basahu",
 	"learn_c1_w3_m": "Reside / Dwell",
 	"ai_disclaimer": "All translations are AI-generated and may contain errors. We welcome corrections.",
-	"ai_disclaimer_learn": "All translations are AI-generated and may contain errors. Go to Settings > Contact to submit a correction."
+	"ai_disclaimer_learn": "All translations are AI-generated and may contain errors. Go to Settings > Contact to submit a correction.",
+	"privacy_policy": "Privacy Policy",
+	"privacy_policy_desc": "Information about your data",
+	"privacy_content_title": "Privacy Policy",
+	"privacy_last_updated": "Last Updated: April 2026",
+	"privacy_intro": "Your privacy is important to us. This privacy policy explains our practices regarding any information collected when you use our application.",
+	"privacy_collection_title": "1. Data Collection",
+	"privacy_collection_body": "The Hanuman Chalisa application does not collect, store, or transmit any personal identification information (PII). All user preferences, such as language and theme settings, are stored locally on your device.",
+	"privacy_third_party_title": "2. Third-Party Services",
+	"privacy_third_party_body": "We do not use third-party analytics, tracking, or advertising services. Your usage of the app remains entirely private and is not shared with any external parties.",
+	"privacy_permissions_title": "3. Permissions",
+	"privacy_permissions_body": "The app may request standard internet permissions to load assets like fonts and icons. No sensitive permissions (such as location, camera, or contacts) are required or requested.",
+	"privacy_children_title": "4. Children's Privacy",
+	"privacy_children_body": "This app is suitable for all ages. We do not knowingly collect personally identifiable information from anyone, including children.",
+	"privacy_contact_title": "5. Contact Us",
+	"privacy_contact_body": "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at namaskar@ashwinig.com."
 }
