@@ -62,21 +62,21 @@
 			<p class="text-xs font-bold opacity-40 uppercase tracking-widest">{m.privacy_last_updated()}</p>
 		</header>
 
-		<div class="bg-base-200/50 rounded-[2rem] p-6 border border-base-300/50 mb-8">
+		<div class="bg-base-200/50 rounded-3xl p-6 border border-base-300/50 mb-8">
 			<p class="text-sm leading-relaxed opacity-70">
 				{m.privacy_intro()}
 			</p>
 		</div>
 
 		<div class="grid gap-6">
-			{#each sections as section}
+			{#each sections as section (section.icon)}
 				<section class="flex gap-4">
 					<div class="flex-none">
 						<div class="w-10 h-10 rounded-xl bg-base-200 text-base-content/70 flex items-center justify-center">
 							<i class="{section.icon} text-xl"></i>
 						</div>
 					</div>
-					<div class="flex-grow pt-1">
+					<div class="grow space-y-4">
 						<h2 class="font-black mb-2 leading-tight">{section.title()}</h2>
 						<p class="text-sm opacity-60 leading-relaxed">
 							{section.body()}
