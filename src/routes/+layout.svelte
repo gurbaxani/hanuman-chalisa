@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { Pathname } from '$app/types';
 	import { resolve } from '$app/paths';
-	import { page } from '$app/state'; // In Svelte 5, this is a reactive object
+	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime.js';
+	import { fade } from 'svelte/transition';
 
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.png';
@@ -12,7 +13,12 @@
 
 	let { children } = $props();
 
-	const isActive = (path: string) => page.url.pathname === path;
+	/**
+	 * Purpose: Ensures correct active state across localized routes.
+	 * Using route.id is stable regardless of language prefix.
+	 */
+	const isActive = (routeId: string | null) => 
+		page.route.id === routeId || page.route.id?.startsWith(routeId + '/');
 </script>
 
 <svelte:head>
@@ -20,7 +26,12 @@
 	<title>{m.jai_shri_ram()}</title>
 </svelte:head>
 
-{@render children()}
+<!-- Purpose: Gentle fade transition to maintain meditative focus during page changes -->
+{#key page.url.pathname}
+	<div in:fade={{ duration: 300, delay: 100 }} out:fade={{ duration: 150 }}>
+		{@render children()}
+	</div>
+{/key}
 
 <div style="display:none">
 	{#each locales as locale (locale)}
@@ -28,30 +39,35 @@
 	{/each}
 </div>
 
-{#if page.url.pathname !== '/' && page.url.pathname !== '/welcome'}
-	<div class="dock dock-xl">
+<!-- Purpose: Navigation dock with solid visibility and clear hierarchy -->
+{#if page.route.id && !['/', '/welcome'].includes(page.route.id)}
+	<nav class="dock dock-xl border-t border-base-content/10 bg-base-100">
 		<button
 			onclick={() => goto(resolve(localizeHref('/read') as Pathname))}
-			class={isActive(resolve(localizeHref('/read') as Pathname)) ? 'dock-active' : ''}
+			class={isActive('/read') ? 'dock-active text-primary' : 'opacity-50'}
+			aria-current={isActive('/read') ? 'page' : undefined}
 		>
-			<i class="ph-duotone ph-book-open-text text-xl"></i>
-			<span class="dock-label">{m.read()}</span>
+			<i class="ph-duotone ph-book-open-text text-2xl"></i>
+			<span class="dock-label font-bold tracking-tight">{m.read()}</span>
 		</button>
 
 		<button
 			onclick={() => goto(resolve(localizeHref('/learn') as Pathname))}
-			class={isActive(resolve(localizeHref('/learn') as Pathname)) ? 'dock-active' : ''}
+			class={isActive('/learn') ? 'dock-active text-primary' : 'opacity-50'}
+			aria-current={isActive('/learn') ? 'page' : undefined}
 		>
-			<i class="ph-duotone ph-hands-praying text-xl"></i>
-			<span class="dock-label">{m.learn()}</span>
+			<i class="ph-duotone ph-hands-praying text-2xl"></i>
+			<span class="dock-label font-bold tracking-tight">{m.learn()}</span>
 		</button>
 
 		<button
 			onclick={() => goto(resolve(localizeHref('/settings') as Pathname))}
-			class={isActive(resolve(localizeHref('/settings') as Pathname)) ? 'dock-active' : ''}
+			class={isActive('/settings') ? 'dock-active text-primary' : 'opacity-50'}
+			aria-current={isActive('/settings') ? 'page' : undefined}
 		>
-			<i class="ph-duotone ph-gear-six text-xl"></i>
-			<span class="dock-label">{m.settings()}</span>
+			<i class="ph-duotone ph-gear-six text-2xl"></i>
+			<span class="dock-label font-bold tracking-tight">{m.settings()}</span>
 		</button>
-	</div>
+	</nav>
 {/if}
+
