@@ -17,7 +17,8 @@
 		te: { native: 'తెలుగు', english: 'Telugu' },
 		kn: { native: 'ಕನ್ನಡ', english: 'Kannada' },
 		bn: { native: 'বাংলা', english: 'Bengali' },
-		bho: { native: 'भोजपुरी', english: 'Bhojpuri' }
+		bho: { native: 'भोजपुरी', english: 'Bhojpuri' },
+		sd: { native: 'سنڌي', english: 'Sindhi' }
 	};
 
 	function handleLocaleSelect(locale: Locale) {
@@ -38,7 +39,8 @@
     { title: 'జై శ్రీ రామ్', subtitle: 'మీ భాషను ఎంచుకోండి' }, // Telugu
     { title: 'ಜೈ ಶ್ರೀ ರಾಮ್', subtitle: 'ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ' }, // Kannada
     { title: 'জয় শ্রী রাম', subtitle: 'আপনার ভাষা নির্বাচন করুন' }, // Bengali
-    { title: 'जय श्री राम', subtitle: 'आपन भाषा चुनीं' } // Bhojpuri
+    { title: 'जय श्री राम', subtitle: 'आपन भाषा चुनीं' }, // Bhojpuri
+    { title: 'جئي شري رام', subtitle: 'پنهنجي ٻولي چونڊيو' } // Sindhi Arabic
 	];
 
 	onMount(() => {
@@ -148,7 +150,7 @@
 		border-radius: 1.25rem;
 		border: 2px solid transparent;
 		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-		text-align: left;
+		text-align: start;
 		cursor: pointer;
 		position: relative;
 	}
@@ -200,7 +202,7 @@
 	}
 
 	.check-icon {
-		margin-left: auto;
+		margin-inline-start: auto;
 		font-size: 1.5rem;
 		color: oklch(var(--p));
 	}

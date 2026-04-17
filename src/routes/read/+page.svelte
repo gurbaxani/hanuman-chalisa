@@ -117,7 +117,7 @@
                     {activeVerse === i ? 'rounded-3xl bg-base-200 shadow-sm' : 'bg-transparent'}"
 				>
 					<div
-						class="absolute inset-y-8 left-4 w-1 rounded-full transition-all duration-500
+						class="absolute inset-y-8 inset-s-4 w-1 rounded-full transition-all duration-500
                         {activeVerse === i
 							? 'bg-secondary opacity-100'
 							: 'bg-transparent opacity-0'}"
