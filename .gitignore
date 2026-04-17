@@ -75,3 +75,8 @@ Thumbs.db
 /coverage
 /.nyc_output
 /test-results
+
+# --- CODING ASSISTANTS ---
+.agents/
+.impeccable.md
+skills-lock.json
