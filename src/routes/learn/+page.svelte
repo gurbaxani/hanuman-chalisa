@@ -672,7 +672,7 @@
 					</div>
 
 					{#if activeIndex === i}
-						<div class="mt-8 w-full max-w-md px-4 text-start" role="presentation" onclick={(e) => e.stopPropagation()}>
+						<div class="mt-8 w-full max-w-md px-4 text-left" role="presentation" onclick={(e) => e.stopPropagation()}>
 							<div role="tablist" class="tabs tabs-box bg-base-300/30 mb-6 rounded-2xl p-1 gap-1">
 								<button
 									role="tab"
@@ -720,7 +720,7 @@
 									{#each item.words as w, j (j)}
 										<div class="flex items-baseline justify-between gap-4 py-2 border-b border-base-content/5 last:border-0">
 											<span class="font-bold text-sm shrink-0 text-primary">{w.word}</span>
-											<span class="text-base-content/60 text-sm text-end">{w.meaning}</span>
+											<span class="text-base-content/60 text-sm text-right">{w.meaning}</span>
 										</div>
 									{/each}
 								</div>
@@ -728,7 +728,7 @@
 
 							{#if activeTab === 'context'}
 								<div class="animate-in fade-in slide-in-from-bottom-2 duration-400">
-									<p class="text-base-content/70 text-sm leading-relaxed border-s-4 border-accent/20 ps-4 py-1">
+									<p class="text-base-content/70 text-sm leading-relaxed border-l-4 border-accent/20 pl-4 py-1">
 										{item.context}
 									</p>
 								</div>

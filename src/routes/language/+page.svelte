@@ -13,8 +13,7 @@
 		te: { native: 'తెలుగు', english: 'Telugu' },
 		kn: { native: 'ಕನ್ನಡ', english: 'Kannada' },
 		bn: { native: 'বাংলা', english: 'Bengali' },
-		bho: { native: 'भोजपुरी', english: 'Bhojpuri' },
-		sd: { native: 'سنڌي', english: 'Sindhi Perso-Arabic' }
+		bho: { native: 'भोजपुरी', english: 'Bhojpuri' }
 	};
 
 	const currentLocale = getLocale();

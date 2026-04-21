@@ -23,8 +23,7 @@
 		te: 'తెలుగు',
 		kn: 'ಕನ್ನಡ',
 		bn: 'বাংলা',
-		bho: 'भोजपुरी',
-		sd: 'سنڌي'
+		bho: 'भोजपुरी'
 	};
 
 	const currentLocale = getLocale();
