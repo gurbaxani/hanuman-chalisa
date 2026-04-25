@@ -40,7 +40,7 @@
 </div>
 
 <!-- Purpose: Navigation dock with solid visibility and clear hierarchy -->
-{#if page.route.id && !['/', '/welcome'].includes(page.route.id)}
+{#if page.route.id && !['/', '/welcome', '/download'].includes(page.route.id)}
 	<nav class="dock dock-xl border-t border-base-content/10 bg-base-100">
 		<button
 			onclick={() => goto(resolve(localizeHref('/read') as Pathname))}

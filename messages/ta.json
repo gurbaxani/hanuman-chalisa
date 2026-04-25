@@ -640,5 +640,19 @@
 	"privacy_children_title": "4. குழந்தைகளின் தனியுரிமை",
 	"privacy_children_body": "இந்தச் செயலி அனைத்து வயதினருக்கும் ஏற்றது. குழந்தைகள் உட்பட எவரிடமிருந்தும் தனிப்பட்ட தகவல்களை நாங்கள் சேகரிப்பதில்லை.",
 	"privacy_contact_title": "5. எங்களைத் தொடர்பு கொள்ளவும்",
-	"privacy_contact_body": "எங்கள் தனியுரிமைக் கொள்கை பற்றி ஏதேனும் கேள்விகள் இருந்தால், namaskar@ashwinig.com இல் எங்களைத் தொடர்பு கொள்ளவும்।"
+	"privacy_contact_body": "எங்கள் தனியுரிமைக் கொள்கை பற்றி ஏதேனும் கேள்விகள் இருந்தால், namaskar@ashwinig.com இல் எங்களைத் தொடர்பு கொள்ளவும்।",
+	"download_title": "Download",
+	"download_desc": "Get the mobile app",
+	"download_hero_title": "Your Spiritual Journey, reimagined.",
+	"download_hero_subtitle": "A minimalist, ad-free, and respectful way to connect with the Hanuman Chalisa. Designed for the modern devotee who values focus and clarity.",
+	"download_play_store": "Google Play",
+	"download_get_it_on": "Get it on",
+	"download_source_code": "Source Code",
+	"feature_offline_title": "Offline First",
+	"feature_offline_desc": "Read and listen anywhere, anytime. No internet connection required once downloaded.",
+	"feature_distraction_title": "Zero Distractions",
+	"feature_distraction_desc": "No ads, no trackers, no clutter. Just you and your devotion in a clean interface.",
+	"feature_multilingual_title": "Multi-language",
+	"feature_multilingual_desc": "Beautiful typography support for Devanagari, Telugu, Tamil, Kannada, and more.",
+	"built_with_love": "Built with {heart} for the spiritual community"
 }

@@ -610,5 +610,19 @@
 	"privacy_children_title": "4. बच्चों की गोपनीयता",
 	"privacy_children_body": "यह ऐप सभी उम्र के लोगों के लिए उपयुक्त है। हम बच्चों सहित किसी की भी व्यक्तिगत जानकारी एकत्र नहीं करते हैं।",
 	"privacy_contact_title": "5. हमसे संपर्क करें",
-	"privacy_contact_body": "यदि आपके पास हमारी गोपनीयता नीति के बारे में कोई प्रश्न हैं, तो namaskar@ashwinig.com पर हमसे संपर्क करें।"
+	"privacy_contact_body": "यदि आपके पास हमारी गोपनीयता नीति के बारे में कोई प्रश्न हैं, तो namaskar@ashwinig.com पर हमसे संपर्क करें।",
+	"download_title": "डाउनलोड",
+	"download_desc": "मोबाइल ऐप प्राप्त करें",
+	"download_hero_title": "आपकी आध्यात्मिक यात्रा, अब एक नए स्वरूप में।",
+	"download_hero_subtitle": "हनुमान चालीसा से जुड़ने का एक सरल, विज्ञापन-मुक्त और सम्मानजनक तरीका। आधुनिक भक्तों के लिए डिज़ाइन किया गया।",
+	"download_play_store": "गूगल प्ले",
+	"download_get_it_on": "यहाँ से प्राप्त करें",
+	"download_source_code": "सोर्स कोड",
+	"feature_offline_title": "ऑफलाइन अनुभव",
+	"feature_offline_desc": "कहीं भी, कभी भी पढ़ें और सुनें। डाउनलोड होने के बाद इंटरनेट की आवश्यकता नहीं।",
+	"feature_distraction_title": "शून्य व्याकुलता",
+	"feature_distraction_desc": "कोई विज्ञापन नहीं, कोई ट्रैकर नहीं। एक स्वच्छ इंटरफ़ेस में आपकी भक्ति।",
+	"feature_multilingual_title": "बहुभाषी समर्थन",
+	"feature_multilingual_desc": "देवनागरी, तेलुगु, तमिल, कन्नड़ और अन्य लिपियों के लिए सुंदर टाइपोग्राफी।",
+	"built_with_love": "आध्यात्मिक समुदाय के लिए {heart} के साथ निर्मित"
 }

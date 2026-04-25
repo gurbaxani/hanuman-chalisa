@@ -144,6 +144,22 @@
 			<section>
 				<h2 class="text-xs opacity-50 uppercase tracking-widest font-bold mb-3 px-2">{m.project()}</h2>
 				<div class="bg-base-200/50 rounded-3xl overflow-hidden border border-base-300/50">
+					<a
+						href={resolve(localizeHref('/download') as Pathname)}
+						class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all no-underline! pt-5! pb-5! border-b border-base-300/50"
+					>
+						<div class="flex items-center gap-4">
+							<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+								<i class="ph-duotone ph-download-simple text-xl"></i>
+							</div>
+							<div class="flex flex-col">
+								<span class="font-bold text-base-content">{m.download_title()}</span>
+								<span class="text-xs opacity-60 text-base-content/60">{m.download_desc()}</span>
+							</div>
+						</div>
+						<i class="ph-duotone ph-caret-right opacity-30 text-xl text-base-content"></i>
+					</a>
+
 					<button
 						onclick={shareApp}
 						class="w-full flex items-center justify-between p-5 hover:bg-base-300/50 transition-all border-b border-base-300/50 text-primary"
