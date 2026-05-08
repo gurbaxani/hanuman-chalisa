@@ -56,7 +56,7 @@
 				</div>
 			</div>
 
-			<button class="btn btn-primary btn-lg rounded-2xl w-full mt-8" onclick={finishSetup}>
+			<button class="btn mt-8 w-full rounded-2xl btn-lg btn-primary" onclick={finishSetup}>
 				{m.get_started()}
 			</button>
 		</div>
@@ -69,7 +69,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: radial-gradient(circle at top right, oklch(var(--p) / 0.05), transparent),
+		background:
+			radial-gradient(circle at top right, oklch(var(--p) / 0.05), transparent),
 			radial-gradient(circle at bottom left, oklch(var(--s) / 0.05), transparent);
 		padding: 1.5rem;
 		font-family: var(--font-sans);
@@ -109,8 +110,13 @@
 	}
 
 	@keyframes float {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-10px); }
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
 	}
 
 	.setup-title {

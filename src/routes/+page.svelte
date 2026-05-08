@@ -42,6 +42,28 @@
 	];
 
 	onMount(() => {
+		// If we're coming from settings to change the language, don't redirect
+		const urlParams = new URLSearchParams(window.location.search);
+		if (urlParams.get('changeLanguage') === 'true') {
+			const interval = setInterval(() => {
+				greetingIndex = (greetingIndex + 1) % greetings.length;
+			}, 3000);
+			return () => clearInterval(interval);
+		}
+
+		// Check for existing language preference
+		const cookies = document.cookie.split(';');
+		const localeCookie = cookies.find((c) => c.trim().startsWith('PARAGLIDE_LOCALE='));
+
+		if (localeCookie) {
+			const savedLocale = localeCookie.split('=')[1]?.trim() as Locale;
+			if (locales.includes(savedLocale)) {
+				const targetUrl = resolve(localizeHref('/read', { locale: savedLocale }) as Pathname);
+				window.location.href = targetUrl;
+				return;
+			}
+		}
+
 		const interval = setInterval(() => {
 			greetingIndex = (greetingIndex + 1) % greetings.length;
 		}, 3000);

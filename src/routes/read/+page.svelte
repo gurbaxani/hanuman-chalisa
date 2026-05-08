@@ -48,7 +48,11 @@
 	]);
 
 	function toggleVerse(index: number) {
-		activeVerse = activeVerse === index ? null : index;
+		if (activeVerse === index) {
+			activeVerse = null;
+		} else {
+			activeVerse = index;
+		}
 	}
 
 	onMount(() => {
@@ -65,7 +69,7 @@
 			},
 			{
 				// This creates a detection window in the center of the screen
-				rootMargin: '-40% 0px -40% 0px',
+				rootMargin: '-25% 0px -60% 0px',
 				threshold: 0
 			}
 		);
@@ -113,21 +117,18 @@
 				<button
 					onclick={() => toggleVerse(i)}
 					data-index={i}
-					class="verse-card group relative flex flex-col items-center py-8 transition-all duration-500 focus:outline-none active:scale-95
-                    {activeVerse === i ? 'rounded-3xl bg-base-200 shadow-sm' : 'bg-transparent'}"
+					class="verse-card group relative flex flex-col items-center py-8 transition-all duration-500 focus:outline-none active:scale-95"
+					class:rounded-3xl={activeVerse === i}
+					class:bg-base-200={activeVerse === i}
+					class:shadow-sm={activeVerse === i}
+					class:bg-transparent={activeVerse !== i}
 				>
-					<div
-						class="absolute inset-y-8 left-4 w-1 rounded-full transition-all duration-500
-                        {activeVerse === i
-							? 'bg-secondary opacity-100'
-							: 'bg-transparent opacity-0'}"
-					></div>
-
 					<span
-						class="mb-4 badge badge-sm transition-all duration-300
-                        {activeVerse === i
-							? 'badge-secondary'
-							: 'badge-ghost opacity-30 group-hover:opacity-100'}"
+						class="mb-4 badge badge-sm transition-all duration-300"
+						class:badge-secondary={activeVerse === i}
+						class:badge-ghost={activeVerse !== i}
+						class:opacity-30={activeVerse !== i}
+						class:group-hover:opacity-100={activeVerse !== i}
 					>
 						{(i + 1).toString().padStart(2, '0')}
 					</span>
