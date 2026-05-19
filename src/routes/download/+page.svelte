@@ -1,6 +1,7 @@
 <script lang="ts">
 	const APP_URL = 'https://play.google.com/store/apps/details?id=com.ashwinig.hanumanji';
 	const GITHUB_URL = 'https://github.com/gurbaxani/hanuman-chalisa';
+	const WEB_APP_URL = 'https://hanumanji.ashwinig.com';
 </script>
 
 <svelte:head>
@@ -52,27 +53,50 @@
 		</div>
 
 		<!-- CTA Section -->
-		<div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
-			<a
-				href={APP_URL}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="group btn h-auto rounded-full px-8 py-4 shadow-xl shadow-primary/20 transition-all btn-lg btn-primary hover:shadow-primary/30"
-			>
-				<div class="flex items-center gap-3 text-primary-content">
-					<i class="ph-duotone ph-google-play-logo text-3xl" aria-hidden="true"></i>
-					<div class="text-left">
-						<div class="mb-1 text-[10px] leading-none tracking-wider uppercase opacity-80">
-							Get it on
+		<div class="flex flex-col items-center justify-center gap-6">
+			<div class="flex flex-col items-center justify-center gap-4 sm:flex-row w-full max-w-xl">
+				<a
+					href={WEB_APP_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group btn h-auto w-full sm:w-auto rounded-full px-8 py-4 shadow-xl shadow-secondary/20 transition-all btn-lg btn-secondary hover:shadow-secondary/30"
+				>
+					<div class="flex items-center gap-3 text-secondary-content">
+						<i class="ph-duotone ph-globe text-3xl" aria-hidden="true"></i>
+						<div class="text-left">
+							<div class="mb-1 text-[10px] leading-none tracking-wider uppercase opacity-80">
+								Launch the
+							</div>
+							<div class="text-xl leading-none font-bold">Web App</div>
 						</div>
-						<div class="text-xl leading-none font-bold">Google Play</div>
 					</div>
-				</div>
-				<i
-					class="ph-duotone ph-arrow-right text-primary-content transition-transform group-hover:translate-x-1"
-					aria-hidden="true"
-				></i>
-			</a>
+					<i
+						class="ph-duotone ph-arrow-right text-secondary-content transition-transform group-hover:translate-x-1"
+						aria-hidden="true"
+					></i>
+				</a>
+
+				<a
+					href={APP_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group btn h-auto w-full sm:w-auto rounded-full px-8 py-4 shadow-xl shadow-primary/20 transition-all btn-lg btn-primary hover:shadow-primary/30"
+				>
+					<div class="flex items-center gap-3 text-primary-content">
+						<i class="ph-duotone ph-google-play-logo text-3xl" aria-hidden="true"></i>
+						<div class="text-left">
+							<div class="mb-1 text-[10px] leading-none tracking-wider uppercase opacity-80">
+								Get it on
+							</div>
+							<div class="text-xl leading-none font-bold">Google Play</div>
+						</div>
+					</div>
+					<i
+						class="ph-duotone ph-arrow-right text-primary-content transition-transform group-hover:translate-x-1"
+						aria-hidden="true"
+					></i>
+				</a>
+			</div>
 
 			<a
 				href={GITHUB_URL}
