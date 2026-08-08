@@ -24,6 +24,7 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<title>{m.jai_shri_ram()}</title>
+	<script defer data-domain="hanumanji.ashwinig.com" src="https://plausible.ashwinig.com/js/script.js"></script>
 </svelte:head>
 
 <!-- Purpose: Gentle fade transition to maintain meditative focus during page changes -->
